@@ -8,6 +8,15 @@ We observe recurring phytoplankton (chlorophyll‑a) spikes during May–July of
 
 <img width="1851" height="901" alt="Screenshot from 2025-08-02 07-47-30" src="https://github.com/user-attachments/assets/a5e67350-d82e-427a-9267-f974e02301e5" />
 
+<img width="1702" height="528" alt="Screenshot from 2025-08-02 09-08-29" src="https://github.com/user-attachments/assets/a7c35778-5fb7-41cb-82f2-bf7b6b70bf34" />
+
+What this shows:
+- A dip in solar activity allows more cosmic rays to reach Earth.
+- Increased muon flux suppresses phytoplankton photosynthesis.
+- That reduces zooplankton, lessening predation.
+- When nutrient upwelling happens, the phytoplankton bloom has fewer checks.
+- Warmer seas increase bloom severity.
+
 ## 📊 Data Provenance
 
 This project integrates multiple open datasets to explore potential correlations between solar activity, ocean temperature, and phytoplankton concentrations in the Southern Ocean. All data were downloaded and processed locally using public APIs or file archives.
