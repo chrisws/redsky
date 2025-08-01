@@ -1,5 +1,3 @@
-# Redsky
-
 ## Exploring a possible connection between space weather and the South Australian HAB situation.
 
 ### Investigating a Dual-Stressor Hypothesis
