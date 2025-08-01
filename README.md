@@ -4,18 +4,18 @@
 
 We observe recurring phytoplankton (chlorophyll‑a) spikes during May–July off South Australia. These appear preceded by short-term dips in cosmic-ray proton flux (from Oulu neutron monitor), along with concurrent nighttime SST⁴ cooling events tied to Bonney upwelling. Although all patterns align temporally, we emphasize this is a hypothesis-generating analysis, not proof of causation. The aim is to provide an open dataset and visual model, inviting marine ecologists, oceanographers, solar physicists, or space-weather researchers to validate or expand this idea using local data or different geospatial analyses.
 
-<img width="1851" height="901" alt="Screenshot from 2025-08-02 07-43-29" src="https://github.com/user-attachments/assets/646eae52-2eb7-4a16-9583-e602e8337485" />
-
-<img width="1851" height="901" alt="Screenshot from 2025-08-02 07-47-30" src="https://github.com/user-attachments/assets/a5e67350-d82e-427a-9267-f974e02301e5" />
-
-<img width="1702" height="528" alt="Screenshot from 2025-08-02 09-08-29" src="https://github.com/user-attachments/assets/a7c35778-5fb7-41cb-82f2-bf7b6b70bf34" />
-
 What this shows:
 - A dip in solar activity allows more cosmic rays to reach Earth.
 - Increased muon flux suppresses phytoplankton photosynthesis.
 - That reduces zooplankton, lessening predation.
 - When nutrient upwelling happens, the phytoplankton bloom has fewer checks.
 - Warmer seas increase bloom severity.
+
+<img width="1851" height="901" alt="Screenshot from 2025-08-02 07-43-29" src="https://github.com/user-attachments/assets/646eae52-2eb7-4a16-9583-e602e8337485" />
+
+<img width="1851" height="901" alt="Screenshot from 2025-08-02 07-47-30" src="https://github.com/user-attachments/assets/a5e67350-d82e-427a-9267-f974e02301e5" />
+
+<img width="1702" height="528" alt="Screenshot from 2025-08-02 09-08-29" src="https://github.com/user-attachments/assets/a7c35778-5fb7-41cb-82f2-bf7b6b70bf34" />
 
 ## 📊 Data Provenance
 
