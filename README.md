@@ -1,5 +1,7 @@
 ## Exploring a possible connection between space weather and the South Australian HAB situation.
 
+TL;DR: This project explores how cosmic ray fluctuations — influenced by solar storms — might play a hidden role in harmful algal blooms (HABs) along the South Australian coast.
+
 🌊 Summary: Dual Stressor Hypothesis for South Australian Phytoplankton Blooms
 
 This project proposes a dual-stressor mechanism driving episodic phytoplankton blooms (and possible harmful algal blooms, HABs) off South Australia's coast. The theory integrates solar activity, cosmic ray flux, and oceanographic conditions, supported by satellite and ground-based datasets.
