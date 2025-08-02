@@ -22,7 +22,7 @@ This project proposes a dual-stressor mechanism driving episodic phytoplankton b
 
 🧬 Ecological Chain Reaction
 
-- Phytoplankton experience a short-term +1 boost from the combination of:
+- Phytoplankton experience a short-term boost from the combination of:
   - Reduced muon stress (post-Forbush)
   - Warm SST
   - Nutrient input (upwelling or flood plume)
