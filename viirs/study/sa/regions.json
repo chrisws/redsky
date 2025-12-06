@@ -1,38 +1,42 @@
 {
-  "SVG - North West": {
-    "box": [137.7, 138.12, -34.1, -34.7],
-    "color": "#1F77B4"
-  },
-  "SVG - North East": {
-    "box": [138.12, 138.6, -34.1, -34.7],
-    "color": "#FF7F0E"
-  },
-  "SVG - Central West": {
-    "box": [137.7, 138.15, -34.7, -35.3],
-    "color": "#2CA02C"
-  },
-  "SVG - Central East": {
-    "box": [138.15, 138.6, -34.7, -35.3],
-    "color": "#D62728"
-  },
-  "SVG - South": {
-    "box": [137.7, 139, -35.3, -36.5],
-    "color": "#9467BD"
-  },
   "Ceduna-Port Lincoln": {
     "box": [133.0, 136.0, -35.3, -32.1],
-    "color": "#e41a1c"
+    "color": "#e378c3"
   },
-  "Spencer Gulf": {
-    "box": [136, 137.7, -35.7, -32.7],
-    "color": "#377eb8"
+  "Spencer Gulf N": {
+    "box": [136, 138.0, -34.1, -32.7],
+    "color": "#2ca02c"
+  },
+  "Spencer Gulf S": {
+    "box": [136, 137.7, -35.7, -34.1],
+    "color": "#808080"
+  },
+  "SVG - NW": {
+    "box": [137.7, 138.12, -34.1, -34.8],
+    "color": "#1e75b3"
+  },
+  "SVG - NE": {
+    "box": [138.12, 138.6, -34.1, -34.8],
+    "color": "#ff7f0f"
+  },
+  "SVG - SW": {
+    "box": [137.7, 138.15, -34.8, -35.5],
+    "color": "#d72828"
+  },
+  "SVG - SE": {
+    "box": [138.15, 138.6, -34.8, -35.5],
+    "color": "#9367bc"
+  },
+  "Victor Harbor": {
+    "box": [137.7, 139.8, -35.5, -36.5],
+    "color": "#8b564b"
   },
   "Victor Harbour-Mt Gambier": {
-    "box": [139, 141, -38.7, -35.6],
-    "color": "#984ea3"
+    "box": [139, 141, -38.5, -36.5],
+    "color": "#bfbf22"
   },
   "Mt Gambier-Port Fairy": {
-    "box": [141, 145, -39.7, -38.0],
-    "color": "#8c564b"
+    "box": [141, 145, -39.4, -38.0],
+    "color": "#17bccf"
   }
 }

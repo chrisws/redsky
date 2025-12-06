@@ -35,10 +35,16 @@ def plot_regions(title, output_png, regions, colors):
 
     # Plot each region as a bounding box
     for region_name, bbox in regions.items():
-        min_lon, max_lon, min_lat, max_lat = bbox
+        lon1, lon2, lat1, lat2 = bbox
+
+        # Ensure proper min/max ordering (handles Southern Hemisphere)
+        min_lon = min(lon1, lon2)
+        max_lon = max(lon1, lon2)
+        min_lat = min(lat1, lat2)  # Most negative (southernmost)
+        max_lat = max(lat1, lat2)  # Least negative (northernmost)
+
         width = max_lon - min_lon
         height = max_lat - min_lat
-
         color = colors[region_name]
 
         # Draw rectangle
