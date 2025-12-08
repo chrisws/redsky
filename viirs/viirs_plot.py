@@ -265,7 +265,8 @@ def main():
         # plt.show()
 
         # # Save the plot
-        output_filename = f"{output_folder}/viirs_timeseries_{col}.png"
+        filename = col.replace(" ", "").replace("-", "")
+        output_filename = f"{output_folder}/viirs_timeseries_{filename}.png"
         fig1.savefig(output_filename, dpi=300, bbox_inches='tight')
         print(f"💾 Main plot saved as: {output_filename}")
 

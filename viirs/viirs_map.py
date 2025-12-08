@@ -70,7 +70,6 @@ def plot_regions(title, output_png, regions, colors):
     plt.title(title, fontsize=14, fontweight='bold', pad=20)
     plt.tight_layout()
     plt.savefig(output_png, dpi=300, bbox_inches='tight')
-    plt.show()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
