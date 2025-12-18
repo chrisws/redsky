@@ -21,6 +21,8 @@ echo "Updating" && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Victor Harbour-Mt Gambier' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Mt Gambier-Port Fairy' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_map.py "Region map" ${STUDY}/regions.json ${STUDY}/images/map.png) && \
+    (cd ${VIIRS} && python viirs_energy_analysis.py --regions ../study/sa/regions.json ../study/sa/sst.csv --plot ../study/sa/images/energy.png --output ../study/sa/energy.csv) && \
+    (cd ${VIIRS} && python viirs_hab_analysis.py --regions ../study/sa/regions.json ../study/sa/chlr-a.csv --plot ../study/sa/images/hab.png --report ../study/sa/hab.md) && \
     echo '## South Australian algal bloom investigation with VIIRS SST and Chlr-A data' > ${MARKDOWN} && \
     echo '![Regions](./study/sa/images/map.png)' >> ${MARKDOWN} && \
     echo '![Ceduna-Port Lincoln](./study/sa/images/viirs_timeseries_CedunaPortLincoln.png)' >> ${MARKDOWN} && \

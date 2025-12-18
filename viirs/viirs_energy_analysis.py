@@ -9,26 +9,28 @@ Calculates energy trends, integrated energy, degree-days, and more from VIIRS SS
 # python viirs_energy_analysis.py sst_data.csv --depth 15 --baseline 16 --output my_results.csv
 # # Full options
 # python energy_analysis.py sst_data.csv \
-#     --depth 10 \
-#     --baseline 15 \
-#     --grid-area 0.5625 \
-#     --output energy_results.csv \
-#     --plot energy_dashboard.png
+    #     --depth 10 \
+    #     --baseline 15 \
+    #     --grid-area 0.5625 \
+    #     --output energy_results.csv \
+    #     --plot energy_dashboard.png
 
 import argparse
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import warnings
+
 from scipy import stats
 from scipy.integrate import trapezoid
-import warnings
+from viirs_regions import get_regions
+
 warnings.filterwarnings('ignore')
 
-
-def calculate_comprehensive_energy_analysis(df, regions=None, depth=10,
-                                           grid_cell_area_km2=0.5625,
-                                           baseline_temp=15.0):
+def calculate_comprehensive_energy_analysis(df, regions, depth=10,
+                                            grid_cell_area_km2=0.5625,
+                                            baseline_temp=15.0):
     """
     Calculate comprehensive ocean thermal energy metrics for each region.
 
@@ -36,7 +38,7 @@ def calculate_comprehensive_energy_analysis(df, regions=None, depth=10,
     -----------
     df : DataFrame
         Must have 'date' column and SST columns for each region (format: 'Region_sst')
-    regions : list, optional
+    regions : list
         List of region names. If None, auto-detect from columns ending in '_sst'
     depth : float
         Mixed layer depth in meters (default 10m for SST measurement)
@@ -54,10 +56,6 @@ def calculate_comprehensive_energy_analysis(df, regions=None, depth=10,
     RHO = 1025  # kg/m³ - seawater density
     CP = 3850   # J/(kg·°C) - specific heat capacity of seawater
 
-    # Auto-detect regions
-    if regions is None:
-        regions = [col.replace('_sst', '') for col in df.columns if col.endswith('_sst')]
-
     print(f"\n{'='*80}")
     print(f"COMPREHENSIVE OCEAN THERMAL ENERGY ANALYSIS")
     print(f"{'='*80}")
@@ -70,7 +68,7 @@ def calculate_comprehensive_energy_analysis(df, regions=None, depth=10,
     results = []
 
     for region in regions:
-        sst_col = f"{region}_sst"
+        sst_col = f"{region}"
 
         if sst_col not in df.columns:
             print(f"WARNING: {region} - Column not found")
@@ -199,7 +197,7 @@ def calculate_comprehensive_energy_analysis(df, regions=None, depth=10,
 
         yearly_integrated = clean_data.groupby('year').apply(
             lambda x: trapezoid(x['thermal_energy'].values,
-                              (x['date'] - x['date'].min()).dt.days.values)
+                                (x['date'] - x['date'].min()).dt.days.values)
             if len(x) > 1 else 0
         )
 
@@ -354,8 +352,8 @@ def plot_comprehensive_dashboard(df, results_df, output_file='energy_dashboard.p
         if row['sst_trend_pvalue'] < 0.05:
             marker = '**' if row['sst_trend_pvalue'] < 0.01 else '*'
             ax2.text(row['sst_trend_C_yr'], row['region'], f' {marker}',
-                    ha='left' if row['sst_trend_C_yr'] > 0 else 'right',
-                    va='center', fontsize=10, fontweight='bold')
+                     ha='left' if row['sst_trend_C_yr'] > 0 else 'right',
+                     va='center', fontsize=10, fontweight='bold')
 
     # Plot 3: Degree-Days
     ax3 = fig.add_subplot(gs[0, 2])
@@ -417,15 +415,15 @@ def plot_comprehensive_dashboard(df, results_df, output_file='energy_dashboard.p
     # Plot 8: Mean Energy vs Mean SST
     ax8 = fig.add_subplot(gs[2, 1])
     ax8.scatter(results_df['mean_sst_C'], results_df['mean_energy_MJ_m2'],
-               s=100, alpha=0.6, c=results_df['annual_integrated_GJ_days_m2_yr'],
-               cmap='RdYlBu_r')
+                s=100, alpha=0.6, c=results_df['annual_integrated_GJ_days_m2_yr'],
+                cmap='RdYlBu_r')
     for idx, row in results_df.iterrows():
         ax8.annotate(row['region'], (row['mean_sst_C'], row['mean_energy_MJ_m2']),
-                    fontsize=7, alpha=0.7)
-    ax8.set_xlabel('Mean SST (°C)', fontsize=10)
-    ax8.set_ylabel('Mean Energy (MJ/m²)', fontsize=10)
-    ax8.set_title('Energy vs Temperature', fontsize=11, fontweight='bold')
-    ax8.grid(alpha=0.3)
+                     fontsize=7, alpha=0.7)
+        ax8.set_xlabel('Mean SST (°C)', fontsize=10)
+        ax8.set_ylabel('Mean Energy (MJ/m²)', fontsize=10)
+        ax8.set_title('Energy vs Temperature', fontsize=11, fontweight='bold')
+        ax8.grid(alpha=0.3)
 
     # Plot 9: Power Trend
     ax9 = fig.add_subplot(gs[2, 2])
@@ -589,6 +587,13 @@ Examples:
         help='Output plot filename (default: energy_dashboard.png)'
     )
 
+    parser.add_argument(
+        '--regions',
+        type=str,
+        help='The regions to inspect'
+    )
+
+
     args = parser.parse_args()
 
     # Load data
@@ -597,14 +602,12 @@ Examples:
     print(f"Loaded {len(df)} rows")
     print(f"Date range: {df['date'].min()} to {df['date'].max()}")
 
-    # Detect regions
-    regions = [col.replace('_sst', '') for col in df.columns if col.endswith('_sst')]
-    print(f"Found {len(regions)} regions: {', '.join(regions[:5])}" +
-          (f" and {len(regions)-5} more..." if len(regions) > 5 else ""))
+    regions, colors = get_regions(args.regions)
 
     # Run analysis
     results = calculate_comprehensive_energy_analysis(
         df,
+        regions,
         depth=args.depth,
         grid_cell_area_km2=args.grid_area,
         baseline_temp=args.baseline
