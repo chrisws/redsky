@@ -61,7 +61,7 @@ def viirs_pixel_coverage(bbox, resolution_km=4):
         "expected_pixels": expected_pixels,
     }
 
-print("\nVIIRS Pixel Coverage Summary")
+print("\n## VIIRS Pixel Coverage Summary\n")
 if len(sys.argv) == 2:
     regions, _ = get_regions(sys.argv[1])
     for region_name, bbox in regions.items():

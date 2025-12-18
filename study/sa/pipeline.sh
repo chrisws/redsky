@@ -36,5 +36,6 @@ echo "Updating" && \
     echo '### Yearly mean values' >> ${MARKDOWN} && \
     echo '```' >> ${MARKDOWN}&& \
     (cd ${VIIRS} && python viirs_yearly_mean.py ${STUDY}/chlr-a.csv >> ${MARKDOWN_1}) && \
+    (cd ${VIIRS} && python viirs_coverage.py ${STUDY}/regions.json >> ${MARKDOWN_1}) && \
     echo '```' >> ${MARKDOWN} && \
     echo Last updated: `date` >> ${MARKDOWN}

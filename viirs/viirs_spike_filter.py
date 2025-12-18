@@ -59,11 +59,10 @@ def analyze_spikes(csv_path, output_path=None, plot=True):
     df = df.set_index('date')
 
     # Regions to check
-    regions = [col for col in df.columns if 'SVG' in col or 'Spencer' in col or
-               'Ceduna' in col or 'Victor' in col or 'Gambier' in col]
+    regions = [col for col in df.columns]
 
     print("="*80)
-    print("SPIKE DETECTION ANALYSIS")
+    print(f"SPIKE DETECTION ANALYSIS")
     print("="*80)
 
     all_spikes = {}
