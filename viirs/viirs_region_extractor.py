@@ -137,7 +137,7 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
     """
     lon1, lon2, lat1, lat2 = bbox
 
-    # Ensure proper min/max ordering (handles Southern Hemisphere)
+    # Ensure proper min/max ordering (works in any Hemisphere)
     min_lon = min(lon1, lon2)
     max_lon = max(lon1, lon2)
     min_lat = min(lat1, lat2)  # Most negative (southernmost)
@@ -176,14 +176,23 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
             if (value < valid_max):
                 valid_max = value
 
-        # Determine if scaling is needed
-        use_scaling = determine_viirs_scaling(dataset, data_var, valid_range)
-        if use_scaling:
-            scale_factor = getattr(data_variable, 'scale_factor', 1.0)
-            add_offset = getattr(data_variable, 'add_offset', 0.0)
-        else:
+        # Check if auto-scaling is enabled (it is by default)
+        data_variable = dataset.variables[data_var]
+        auto_scale = data_variable.scale  # This is True by default in netCDF4-python
+
+        # If auto-scaling is on, data is already scaled when read
+        if auto_scale:
             scale_factor = 1.0
             add_offset = 0.0
+        else:
+            # Determine if manual scaling is needed
+            use_scaling = determine_viirs_scaling(dataset, data_var, valid_range)
+            if use_scaling:
+                scale_factor = getattr(data_variable, 'scale_factor', 1.0)
+                add_offset = getattr(data_variable, 'add_offset', 0.0)
+            else:
+                scale_factor = 1.0
+                add_offset = 0.0
 
         # Handle coordinate systems
         if lat.ndim == 1 and lon.ndim == 1:
@@ -235,14 +244,25 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
             logger.debug(f"unexpected dimension {lat.ndim} {lon.ndim}")
             return None
 
-        # Handle masked arrays
-        if hasattr(data_slice, 'mask'):
-            data_slice = data_slice.compressed()
+        # Handle masked arrays - ensure data and quality stay aligned
+        if hasattr(data_slice, 'mask') or (qual_data is not None and hasattr(qual_slice, 'mask')):
+            # Build combined mask
+            mask = np.zeros(data_slice.shape, dtype=bool)
+            if hasattr(data_slice, 'mask'):
+                mask |= data_slice.mask
             if qual_data is not None and hasattr(qual_slice, 'mask'):
-                qual_slice = qual_slice.compressed()
+                mask |= qual_slice.mask
 
-        # Flatten if multidimensional
-        data_slice = data_slice.flatten() if data_slice.ndim > 1 else data_slice
+            # Apply combined mask to both arrays
+            data_slice = np.asarray(data_slice)[~mask]
+            if qual_data is not None:
+                qual_slice = np.asarray(qual_slice)[~mask]
+
+        # Flatten if multidimensional (ensure both arrays stay aligned)
+        if data_slice.ndim > 1:
+            data_slice = data_slice.flatten()
+        if qual_data is not None and qual_slice.ndim > 1:
+            qual_slice = qual_slice.flatten()
 
         # Apply quality filters
         valid_mask = np.ones(data_slice.shape, dtype=bool)
@@ -256,9 +276,14 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
 
         # Apply SST quality filter if available
         if qual_data is not None and len(qual_slice) == len(data_slice):
-            # Common VIIRS quality levels: 0=best, 1=good, 2=questionable, 3=bad, 4=worst
-            # Keep only best and good quality data
-            quality_mask = (qual_slice <= 1)  # Keep quality 0 and 1
+            if data_var in ['sst', 'sst4', 'sea_surface_temperature', 'SST', 'SST4']:
+                # VIIRS SST quality: keep -1, 0, 1 (best/good)
+                quality_mask = (qual_slice >= -1) & (qual_slice <= 1)
+            else:
+                # For chlorophyll, quality flags may not exist or use different scheme
+                # Be more conservative - accept only best quality
+                quality_mask = (qual_slice == 0) | (qual_slice == 1)
+
             valid_mask &= quality_mask
             logger.debug(f"Quality filter kept {np.sum(quality_mask)} of {len(quality_mask)} pixels")
 
