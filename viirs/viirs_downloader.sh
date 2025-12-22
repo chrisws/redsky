@@ -21,6 +21,8 @@ usage() {
     echo "  [-s 20120102]    Optional start date to fetch"
     echo "  [-e 20171212]    Optional end date to fetch"
     echo "  [-p]             Optional fetch SNPP data in lieu of JPSS1"
+    echo "  [-k]             Optional fetch JPSS2 data in lieu of JPSS1"
+    echo "  [-o]             Optional fetch PACE_OCI data in lieu of JPSS1"
     echo "  [-t]             Optional fetch SST in lieu of CHLR-A"
     echo "  output_folder    Directory to save downloaded files"
     echo
@@ -31,12 +33,13 @@ usage() {
 
 START_DATE="20171213"
 END_DATE=$(date +%Y%m%d)
-PREFIX="JPSS1"
+PREFIX="JPSS1_VIIRS"
 FORMAT="CHL.chlor_a"
 
 # JPSS1_VIIRS.20171213.L3m.DAY.CHL.chlor_a.4km.nc
 #  SNPP_VIIRS.20120102.L3m.DAY.CHL.chlor_a.4km.nc
 # JPSS1_VIIRS.20180104.L3m.DAY.NSST.sst.4km.nc
+# PACE_OCI.20240308.L3m.DAY.CHL.chlor_a.4km.nc
 
 # Parse options
 while [[ $# -gt 0 ]]; do
@@ -54,7 +57,15 @@ while [[ $# -gt 0 ]]; do
       fi
       ;;
     -p)
-      PREFIX="SNPP"
+      PREFIX="SNPP_VIIRS"
+      shift
+      ;;
+    -k)
+      PREFIX="JPSS2_VIIRS"
+      shift
+      ;;
+    -o)
+      PREFIX="PACE_OCI"
       shift
       ;;
     -t)
@@ -115,7 +126,7 @@ get_latest_date() {
     local latest_date=""
     local latest_epoch=0
 
-    for file in "$OUTPUT_DIR"/"${PREFIX}"_VIIRS.*.nc; do
+    for file in "$OUTPUT_DIR"/"${PREFIX}".*.nc; do
         [ -e "$file" ] || continue
         local file_date=$(parse_date_from_filename "$(basename "$file")")
         if [ -n "$file_date" ]; then
@@ -140,13 +151,13 @@ get_latest_date() {
 # Generate filename for a given date
 generate_filename() {
     local date_str="$1"
-    echo "${PREFIX}_VIIRS.${date_str}.L3m.DAY.${FORMAT}.4km.nc"
+    echo "${PREFIX}.${date_str}.L3m.DAY.${FORMAT}.4km.nc"
 }
 
 # Generate a 'near realtime data' filename (lower quality, but more likely to be available)
 generate_nrt_filename() {
     local date_str="$1"
-    echo "${PREFIX}_VIIRS.${date_str}.L3m.DAY.${FORMAT}.4km.NRT.nc"
+    echo "${PREFIX}.${date_str}.L3m.DAY.${FORMAT}.4km.NRT.nc"
 }
 
 # Download a single file
