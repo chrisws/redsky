@@ -44,7 +44,7 @@ def parse_date_from_filename(filename: str) -> Optional[str]:
     """Extract date from filename like SNPP_VIIRS.20120101.L3m.DAY.CHL.chlor_a.4km.nc
     or JPSS1_VIIRS.20171213.L3m.DAY.CHL.chlor_a.4km.nc"""
     import re
-    match = re.search(r'(?:SNPP|JPSS1)_VIIRS\.(\d{8})\.', filename)
+    match = re.search(r'(?:SNPP|JPSS1|JPSS2|PACE)_(?:VIIRS|OCI)\.(\d{8})\.', filename)
     if match:
         return match.group(1)
     return None
@@ -72,6 +72,7 @@ def detect_viirs_variables(dataset):
     lat_candidates = ['lat', 'latitude', 'Latitude']
     lon_candidates = ['lon', 'longitude', 'Longitude']
     qual_candidates = ['qual_sst', 'quality_level', 'sst_quality', 'quality']
+    pft_candidates = ['diatom_carbon', 'cyano_carbon', 'dino_carbon', 'cocco_carbon']
 
     chlor_var = next((c for c in chlor_candidates if c in variables), None)
     lat_var = next((c for c in lat_candidates if c in variables), None)
