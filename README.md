@@ -65,9 +65,9 @@ Port Fairy {'lat_km': 111.32, 'lon_km': 174.23988004162143, 'area_km2': 19396.38
 
 ```
 
-# Technical Notes
+## Technical Notes
 
-## VIIRS Sensor Capabilities:
+### VIIRS Sensor Capabilities:
 
 - Operational: 2011-present (Suomi-NPP), 2017-present (NOAA-20)
 - Resolution: 750m (superior to MODIS 1000m)
@@ -75,7 +75,7 @@ Port Fairy {'lat_km': 111.32, 'lon_km': 174.23988004162143, 'area_km2': 19396.38
 - Algorithm: Standard NASA OC3 chlorophyll-a retrieval
 - Validation: Well-established for coastal waters globally
 
-## Not Benthic Reflectance:
+### Not Benthic Reflectance:
 
 - Upper Spencer Gulf depth: 20-40m (adequate for ocean color sensing)
 - Gulf St Vincent North depth: 15-30m (adequate for ocean color sensing)
@@ -84,7 +84,7 @@ Port Fairy {'lat_km': 111.32, 'lon_km': 174.23988004162143, 'area_km2': 19396.38
 - Southern regions (similar depths) show low stable values
 - Spike events (9.11 mg/m³) impossible from benthic reflectance
 
-## Not Cloud/Atmospheric Artifacts:
+### Not Cloud/Atmospheric Artifacts:
 
 - 13-year consistent pattern (thousands of clear-sky observations)
 - Multiple independent overpasses (NPP + NOAA-20)
@@ -92,21 +92,14 @@ Port Fairy {'lat_km': 111.32, 'lon_km': 174.23988004162143, 'area_km2': 19396.38
 - Pattern matches known circulation (counter-clockwise GSV)
 - Independent validation: In-situ sampling during 2025 crisis confirmed satellite values
 
-# What is Chlorophyll-a?
+## What is Chlorophyll-a?
 
 Chlorophyll-a is the green pigment found in all photosynthetic algae
 and plants. In ocean water, measuring chlorophyll-a tells us how much
 algae (phytoplankton) is present. It's the standard indicator used
 worldwide to monitor algal blooms.
 
-# Nitrogen Isotope Fingerprinting
-
-- Sample seagrass/algae tissue from north-south transects
-- δ15N signatures differentiate: organic waste (+8 to +20‰), treated sewage (+15 to +22‰), natural marine (+3 to +7‰)
-- Definitive source apportionment
-- For details, see: https://pubmed.ncbi.nlm.nih.gov/23602260/
-
-## Understanding the Measurements (mg/m³)
+### Understanding the Measurements (mg/m³)
 
 | Chlorophyll-a Level | Interpretation                  | Water Quality |
 |---------------------|---------------------------------|---------------|
@@ -116,7 +109,7 @@ worldwide to monitor algal blooms.
 | 5.0 - 10.0 mg/m³    | Severe bloom                    | 🔴 Harmful    |
 | > 10.0 mg/m³        | Extreme bloom / toxic potential | 🔴 Crisis     |
 
-## What Causes High Chlorophyll?
+### What Causes High Chlorophyll?
 
 Algae need nutrients (primarily nitrogen and phosphorus) to grow. Excessive nutrients from:
 - Wastewater discharge
@@ -125,7 +118,14 @@ Algae need nutrients (primarily nitrogen and phosphorus) to grow. Excessive nutr
 - Urban stormwater
 - Waste management facilities
 
-# GAB as an Early Warning System for Coastal Algal Blooms
+### Nitrogen Isotope Fingerprinting
+
+- Sample seagrass/algae tissue from north-south transects
+- δ15N signatures differentiate: organic waste (+8 to +20‰), treated sewage (+15 to +22‰), natural marine (+3 to +7‰)
+- Definitive source apportionment
+- For details, see: https://pubmed.ncbi.nlm.nih.gov/23602260/
+
+## GAB as an Early Warning System for Coastal Algal Blooms
 
 The Great Australian Bight (GAB) serves as an ideal sentinel station
 for detecting large-scale algal bloom events along the South
@@ -192,4 +192,4 @@ KEY ADVANTAGES                        OPERATIONAL BENEFITS
 ```
 
 ---
-Last updated: Wed 24 Dec 2025 09:56:22 ACDT
+Last updated: Wed 24 Dec 2025 10:10:27 ACDT
