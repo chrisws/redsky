@@ -19,7 +19,12 @@ def plot_regions(title, output_png, regions, colors):
     ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
 
     # Set extent to cover South Australia coast
-    ax.set_extent([132, 148, -40.5, -32], crs=ccrs.PlateCarree())
+    ax.set_extent([130, 148, -40.5, -30], crs=ccrs.PlateCarree())
+
+    # Use higher resolution coastlines
+    ax.coastlines(resolution='10m')  # Options: '110m', '50m', '10m'
+    ax.add_feature(cfeature.COASTLINE.with_scale('10m'))
+    ax.add_feature(cfeature.LAKES.with_scale('10m'), edgecolor='blue', facecolor='lightblue')
 
     # Add map features
     ax.add_feature(cfeature.LAND, facecolor='lightgray', edgecolor='black', linewidth=0.5)
