@@ -1,13 +1,13 @@
-## South Australian algal bloom investigation with VIIRS SST and Chlr-A data
-![Regions](./study/sa/images/map.png)
-![Esperance_1](./study/sa/images/viirs_timeseries_Esperance_1.png)
-![Esperance_2](./study/sa/images/viirs_timeseries_Esperance_2.png)
-![Esperance_3](./study/sa/images/viirs_timeseries_Esperance_3.png)
-![Mundrabilla](./study/sa/images/viirs_timeseries_Mundrabilla.png)
-![Eucla_1](./study/sa/images/viirs_timeseries_Eucla_1.png)
-![Eucla_2](./study/sa/images/viirs_timeseries_Eucla_2.png)
-![Yalata](./study/sa/images/viirs_timeseries_Yalata.png)
-![Ceduna](./study/sa/images/viirs_timeseries_Ceduna.png)
+## South Australian algal bloom investigation
+![Regions](./study/gab/images/map.png)
+![Esperance_1](./study/gab/images/viirs_timeseries_Esperance_1.png)
+![Esperance_2](./study/gab/images/viirs_timeseries_Esperance_2.png)
+![Esperance_3](./study/gab/images/viirs_timeseries_Esperance_3.png)
+![Mundrabilla](./study/gab/images/viirs_timeseries_Mundrabilla.png)
+![Eucla_1](./study/gab/images/viirs_timeseries_Eucla_1.png)
+![Eucla_2](./study/gab/images/viirs_timeseries_Eucla_2.png)
+![Yalata](./study/gab/images/viirs_timeseries_Yalata.png)
+![Ceduna](./study/gab/images/viirs_timeseries_Ceduna.png)
 ### Yearly mean values
 ```
 | Group      |   Esperance_1 |   Esperance_2 |   Esperance_3 |   Mundrabilla |   Eucla_1 |   Eucla_2 |   Yalata |   Ceduna |
@@ -47,4 +47,43 @@ Ceduna {'lat_km': 89.05600000000047, 'lon_km': 141.14182091138554, 'area_km2': 1
 
 
 ---
-Last updated: Fri 26 Dec 2025 20:18:38 ACDT
+## Ocean thermal energy analysis
+- Mixed layer depth: 10.0m
+- Grid cell area: 0.5625 km²
+- Baseline temperature: 15.0°C
+
+### Esperance_1:
+  - SST: 17.95°C  |  Trend: -0.0688°C/yr (p=0.0000)
+  - Heating DD/yr: 535.4  |  Cooling DD/yr: 0.0
+
+### Esperance_2:
+  - SST: 17.71°C  |  Trend: -0.0787°C/yr (p=0.0001)
+  - Heating DD/yr: 519.5  |  Cooling DD/yr: 0.7
+
+### Esperance_3:
+  - SST: 17.73°C  |  Trend: -0.0795°C/yr (p=0.0004)
+  - Heating DD/yr: 534.8  |  Cooling DD/yr: 1.4
+
+### Mundrabilla:
+  - SST: 17.77°C  |  Trend: -0.0782°C/yr (p=0.0016)
+  - Heating DD/yr: 533.8  |  Cooling DD/yr: 3.9
+
+### Eucla_1:
+  - SST: 17.68°C  |  Trend: -0.1317°C/yr (p=0.0000)
+  - Heating DD/yr: 497.5  |  Cooling DD/yr: 10.1
+
+### Eucla_2:
+  - SST: 17.67°C  |  Trend: -0.1447°C/yr (p=0.0000)
+  - Heating DD/yr: 537.7  |  Cooling DD/yr: 5.9
+
+### Yalata:
+  - SST: 17.46°C  |  Trend: -0.1462°C/yr (p=0.0000)
+  - Heating DD/yr: 494.2  |  Cooling DD/yr: 6.2
+
+### Ceduna:
+  - SST: 17.25°C  |  Trend: -0.1291°C/yr (p=0.0000)
+  - Heating DD/yr: 463.8  |  Cooling DD/yr: 6.6
+
+---
+
+Last updated: Sat 27 Dec 2025 06:30:54 ACDT
