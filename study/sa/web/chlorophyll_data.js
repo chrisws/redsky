@@ -1,9 +1,9 @@
 const CHLOROPHYLL_DATA = {
   "metadata": {
-    "generated": "2025-12-30T04:19:29.225120Z",
+    "generated": "2025-12-30T23:47:16.079970Z",
     "date_range": {
       "start": "2025-01-01",
-      "end": "2025-12-27"
+      "end": "2025-12-28"
     },
     "regions": [
       "GAB",
@@ -234,9 +234,9 @@ const CHLOROPHYLL_DATA = {
         ]
       }
     },
-    "total_dates": 349,
+    "total_dates": 350,
     "total_regions": 15,
-    "data_points": 4057,
+    "data_points": 4072,
     "source": "NOAA MSL12 VIIRS Merged SNPP+NOAA-20 NRT",
     "variable": "Chlorophyll-a Concentration",
     "units": "mg/m\u00b3"
@@ -6523,6 +6523,24 @@ const CHLOROPHYLL_DATA = {
       "Victor Harbour-Mt Gambier": 0.47250428795814514,
       "Mt Gambier": 0.3128754198551178,
       "Port Fairy": 0.9174719452857971
+    },
+    {
+      "date": "2025-12-28",
+      "GAB": 0.3257293403148651,
+      "Ceduna": 0.8487447500228882,
+      "Port Lincoln": 0.4551887512207031,
+      "Spencer Gulf N": 2.787085771560669,
+      "Spencer Gulf S": 0.6104680299758911,
+      "SVG - NW": 3.2981934547424316,
+      "SVG - NE": 6.539905548095703,
+      "SVG - SW": 1.009253978729248,
+      "SVG - SE": 0.9624924063682556,
+      "KI - W": 0.40327519178390503,
+      "KI - E": 0.7673705220222473,
+      "Victor Harbor": 1.3648865222930908,
+      "Victor Harbour-Mt Gambier": 0.4645094573497772,
+      "Mt Gambier": 0.2836413085460663,
+      "Port Fairy": 1.1454904079437256
     }
   ]
 };
