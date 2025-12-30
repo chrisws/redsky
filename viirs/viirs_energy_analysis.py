@@ -56,14 +56,10 @@ def calculate_comprehensive_energy_analysis(df, regions, depth=10,
     RHO = 1025  # kg/m³ - seawater density
     CP = 3850   # J/(kg·°C) - specific heat capacity of seawater
 
-    print(f"\n{'='*80}")
-    print(f"COMPREHENSIVE OCEAN THERMAL ENERGY ANALYSIS")
-    print(f"{'='*80}")
-    print(f"Mixed layer depth: {depth}m")
-    print(f"Grid cell area: {grid_cell_area_km2} km²")
-    print(f"Baseline temperature: {baseline_temp}°C")
-    print(f"Analyzing {len(regions)} regions...")
-    print(f"{'='*80}\n")
+    print(f"## Ocean thermal energy analysis")
+    print(f"- Mixed layer depth: {depth}m")
+    print(f"- Grid cell area: {grid_cell_area_km2} km²")
+    print(f"- Baseline temperature: {baseline_temp}°C")
 
     results = []
 
@@ -298,19 +294,17 @@ def calculate_comprehensive_energy_analysis(df, regions, depth=10,
         })
 
         # Print summary
-        print(f"\n{region}:")
-        print(f"  SST: {mean_sst:.2f}°C  |  Trend: {sst_trend_per_year:+.4f}°C/yr "
+        print(f"\n### {region}:")
+        print(f"  - SST: {mean_sst:.2f}°C  |  Trend: {sst_trend_per_year:+.4f}°C/yr "
               f"(p={p_sst:.4f})")
-        print(f"  Annual Integrated Energy: {annual_integrated_energy/1000:.2f} GJ·days/m²/yr")
-        print(f"  Heating DD/yr: {heating_dd_per_year:.1f}  |  Cooling DD/yr: {cooling_dd_per_year:.1f}")
-        print(f"  Extreme events: {pct_extreme:.1f}% of time above 95th percentile")
+        # print(f"  - Annual Integrated Energy: {annual_integrated_energy/1000:.2f} GJ·days/m²/yr")
+        print(f"  - Heating DD/yr: {heating_dd_per_year:.1f}  |  Cooling DD/yr: {cooling_dd_per_year:.1f}")
+        # print(f"  - Extreme events: {pct_extreme:.1f}% of time above 95th percentile")
 
     # Create results DataFrame
     results_df = pd.DataFrame(results)
 
-    print(f"\n{'='*80}")
-    print(f"ANALYSIS COMPLETE - {len(results_df)} regions processed")
-    print(f"{'='*80}\n")
+    print("\n---\n")
 
     return results_df
 
@@ -319,8 +313,6 @@ def plot_comprehensive_dashboard(df, results_df, output_file='energy_dashboard.p
     """
     Create comprehensive visualization dashboard.
     """
-
-    print("Creating visualization dashboard...")
 
     fig = plt.figure(figsize=figsize)
     gs = fig.add_gridspec(3, 3, hspace=0.35, wspace=0.35)
@@ -442,7 +434,6 @@ def plot_comprehensive_dashboard(df, results_df, output_file='energy_dashboard.p
              ha='center', fontsize=9, style='italic')
 
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
-    print(f"Dashboard saved to: {output_file}")
 
     return fig
 
@@ -452,7 +443,6 @@ def export_results(results_df, output_file='energy_analysis_results.csv'):
     Export results to CSV.
     """
     results_df.to_csv(output_file, index=False, float_format='%.6f')
-    print(f"Results exported to: {output_file}")
 
 
 def print_summary(results_df):
@@ -597,10 +587,7 @@ Examples:
     args = parser.parse_args()
 
     # Load data
-    print(f"\nLoading data from: {args.sst_filename}")
     df = pd.read_csv(args.sst_filename, parse_dates=["date"])
-    print(f"Loaded {len(df)} rows")
-    print(f"Date range: {df['date'].min()} to {df['date'].max()}")
 
     regions, colors = get_regions(args.regions)
 
@@ -614,17 +601,13 @@ Examples:
     )
 
     # Print summary
-    print_summary(results)
+    # print_summary(results)
 
     # Export results
     export_results(results, args.output)
 
     # Create visualization
     plot_comprehensive_dashboard(df, results, args.plot)
-
-    print("\nAnalysis complete!")
-    print(f"  Results: {args.output}")
-    print(f"  Dashboard: {args.plot}")
 
 
 if __name__ == "__main__":

@@ -44,7 +44,7 @@ def parse_date_from_filename(filename: str) -> Optional[str]:
     """Extract date from filename like SNPP_VIIRS.20120101.L3m.DAY.CHL.chlor_a.4km.nc
     or JPSS1_VIIRS.20171213.L3m.DAY.CHL.chlor_a.4km.nc"""
     import re
-    match = re.search(r'(?:SNPP|JPSS1|JPSS2|PACE)_(?:VIIRS|OCI)\.(\d{8})\.', filename)
+    match = re.search(r'(?:SNPP|JPSS1|JPSS2|PACE|NOAH)_(?:VIIRS|OCI)\.(\d{8})\.', filename)
     if match:
         return match.group(1)
     return None
@@ -68,7 +68,7 @@ def detect_viirs_variables(dataset):
     variables = list(dataset.variables.keys())
 
     sst_candidates = ['sst', 'sst4', 'sea_surface_temperature', 'SST', 'SST4']
-    chlor_candidates = ['chlor_a', 'chlorophyll_a', 'CHL', 'chl']
+    chlor_candidates = ['chlor_a', 'chlorophyll_a', 'CHL', 'chl', 'chl_oci']
     lat_candidates = ['lat', 'latitude', 'Latitude']
     lon_candidates = ['lon', 'longitude', 'Longitude']
     qual_candidates = ['qual_sst', 'quality_level', 'sst_quality', 'quality']
@@ -128,11 +128,11 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
     """
     Extract mean chlorophyll-a for a region, applying quality flags.
     Handles both Northern and Southern Hemisphere coordinates correctly.
+    Compatible with both NASA and NOAA VIIRS formats.
 
     Args:
         dataset: NetCDF dataset
         bbox: [min_lon, max_lon, lat1, lat2] where lat1 and lat2 can be in any order
-
     Returns:
         Mean chlorophyll-a value or None if no valid data
     """
@@ -151,34 +151,55 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
             logger.debug("no variables")
             return None
 
+        # Detect format type
+        is_noaa_format = (data_var == 'chl_oci')
+
         # Load coordinate and data arrays
         lat = dataset.variables[lat_var][:]
         lon = dataset.variables[lon_var][:]
-        data = dataset.variables[data_var][:]
 
-        # Load quality data if available
+        # Extract data - handle 4D NOAA format
+        if is_noaa_format:
+            # NOAA format - extract from 4D array (time, altitude, lat, lon)
+            data = dataset.variables[data_var][0, 0, :, :]
+        else:
+            # NASA format - 2D or 3D
+            data = dataset.variables[data_var][:]
+
+        # Load quality data if available - handle 4D format for NOAA
         qual_data = None
+        qual_slice = None
         if qual_var and qual_var in dataset.variables:
-            qual_data = dataset.variables[qual_var][:]
-            logger.debug(f"Using quality variable: {qual_var}")
+            try:
+                qual_variable = dataset.variables[qual_var]
+                if is_noaa_format and qual_variable.ndim == 4:
+                    # NOAA format quality data might also be 4D
+                    qual_data = qual_variable[0, 0, :, :]
+                else:
+                    qual_data = qual_variable[:]
+                logger.debug(f"Using quality variable: {qual_var}")
+            except Exception as e:
+                logger.debug(f"Could not load quality data: {e}")
+                qual_data = None
 
         # Get metadata for quality filtering
         data_variable = dataset.variables[data_var]
         fill_value = getattr(data_variable, '_FillValue', -32767)
 
+        # Use provided valid_range or try to get from attributes
         valid_min = valid_range[0]
         valid_max = valid_range[1]
+
         if hasattr(data_variable, "valid_min"):
             value = getattr(data_variable, 'valid_min')
-            if (value > valid_min):
+            if value > valid_min:
                 valid_min = value
         if hasattr(data_variable, "valid_max"):
             value = getattr(data_variable, 'valid_max')
-            if (value < valid_max):
+            if value < valid_max:
                 valid_max = value
 
         # Check if auto-scaling is enabled (it is by default)
-        data_variable = dataset.variables[data_var]
         auto_scale = data_variable.scale  # This is True by default in netCDF4-python
 
         # If auto-scaling is on, data is already scaled when read
@@ -204,6 +225,7 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
             # Find indices within region
             lat_mask = (lat >= min_lat) & (lat <= max_lat)
             lon_mask = (lon >= min_lon) & (lon <= max_lon)
+
             lat_inds = np.where(lat_mask)[0]
             lon_inds = np.where(lon_mask)[0]
 
@@ -212,18 +234,13 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
                 return None
 
             # Extract data slice
-            if data.ndim == 3:  # Has time dimension
-                data_slice = data[0, lat_inds.min():lat_inds.max()+1,
-                                  lon_inds.min():lon_inds.max()+1]
-                if qual_data is not None:
-                    qual_slice = qual_data[0, lat_inds.min():lat_inds.max()+1,
-                                          lon_inds.min():lon_inds.max()+1]
-            else:
-                data_slice = data[lat_inds.min():lat_inds.max()+1,
-                                       lon_inds.min():lon_inds.max()+1]
-                if qual_data is not None:
-                    qual_slice = qual_data[lat_inds.min():lat_inds.max()+1,
-                                          lon_inds.min():lon_inds.max()+1]
+            # Note: data is now always 2D after our extraction above
+            data_slice = data[lat_inds.min():lat_inds.max()+1,
+                             lon_inds.min():lon_inds.max()+1]
+
+            if qual_data is not None:
+                qual_slice = qual_data[lat_inds.min():lat_inds.max()+1,
+                                      lon_inds.min():lon_inds.max()+1]
 
         elif lat.ndim == 2 and lon.ndim == 2:
             # 2D coordinates
@@ -233,14 +250,10 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
             spatial_mask = ((lat >= min_lat) & (lat <= max_lat) &
                           (lon >= min_lon) & (lon <= max_lon))
 
-            if data.ndim == 3:
-                data_slice = data[0, :, :][spatial_mask]
-                if qual_data is not None:
-                    qual_slice = qual_data[0, :, :][spatial_mask]
-            else:
-                data_slice = data[spatial_mask]
-                if qual_data is not None:
-                    qual_slice = qual_data[spatial_mask]
+            data_slice = data[spatial_mask]
+
+            if qual_data is not None:
+                qual_slice = qual_data[spatial_mask]
         else:
             logger.debug(f"unexpected dimension {lat.ndim} {lon.ndim}")
             return None
@@ -249,20 +262,22 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
         if hasattr(data_slice, 'mask') or (qual_data is not None and hasattr(qual_slice, 'mask')):
             # Build combined mask
             mask = np.zeros(data_slice.shape, dtype=bool)
+
             if hasattr(data_slice, 'mask'):
                 mask |= data_slice.mask
-            if qual_data is not None and hasattr(qual_slice, 'mask'):
+
+            if qual_data is not None and qual_slice is not None and hasattr(qual_slice, 'mask'):
                 mask |= qual_slice.mask
 
             # Apply combined mask to both arrays
             data_slice = np.asarray(data_slice)[~mask]
-            if qual_data is not None:
+            if qual_data is not None and qual_slice is not None:
                 qual_slice = np.asarray(qual_slice)[~mask]
 
         # Flatten if multidimensional (ensure both arrays stay aligned)
         if data_slice.ndim > 1:
             data_slice = data_slice.flatten()
-        if qual_data is not None and qual_slice.ndim > 1:
+        if qual_data is not None and qual_slice is not None and qual_slice.ndim > 1:
             qual_slice = qual_slice.flatten()
 
         # Apply quality filters
@@ -275,20 +290,19 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
         # Filter non-finite and zero values
         valid_mask &= np.isfinite(data_slice) & (data_slice != 0)
 
-        # Apply SST quality filter if available
-        if qual_data is not None and len(qual_slice) == len(data_slice):
+        # Apply quality filter if available
+        if qual_data is not None and qual_slice is not None and len(qual_slice) == len(data_slice):
             if data_var in ['sst', 'sst4', 'sea_surface_temperature', 'SST', 'SST4']:
                 # VIIRS SST quality: keep -1, 0, 1 (best/good)
                 quality_mask = (qual_slice >= -1) & (qual_slice <= 1)
             else:
-                # For chlorophyll, quality flags may not exist or use different scheme
+                # For chlorophyll (both NASA and NOAA formats)
                 # Be more conservative - accept only best quality
                 quality_mask = (qual_slice == 0) | (qual_slice == 1)
 
             valid_mask &= quality_mask
             logger.debug(f"Quality filter kept {np.sum(quality_mask)} of {len(quality_mask)} pixels")
 
-        # print (f"ndim {data_slice.ndim}")
         valid_raw_data = data_slice[valid_mask] if data_slice.ndim > 0 else np.array([data_slice])[valid_mask]
 
         if len(valid_raw_data) < MIN_VALID_PIXELS:
@@ -299,20 +313,22 @@ def extract_region_mean(dataset, bbox: List[float]) -> Optional[float]:
         scaled_data = valid_raw_data * scale_factor + add_offset
 
         # Final quality filters for chlorophyll-a
-        # Valid range: 0.01 to 100 mg/mÂ³ (remove negatives and extreme outliers)
+        # Valid range: typically 0.01 to 100 mg/m³
         final_valid = ((scaled_data >= valid_min) & (scaled_data <= valid_max) &
                       np.isfinite(scaled_data))
 
         final_data = scaled_data[final_valid]
 
         if len(final_data) < MIN_VALID_PIXELS:
-            logger.debug(f"Too few valid pixels {len(valid_raw_data)}")
+            logger.debug(f"Too few valid pixels {len(final_data)}")
             return None
 
         return float(np.mean(final_data))
 
     except Exception as e:
         print(f"Error extracting region {bbox}: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
         return None
 
 def process_file(regions, nc_path: Path) -> Optional[Dict[str, float]]:

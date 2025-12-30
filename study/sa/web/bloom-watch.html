@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chlorophyll-a Time Series Viewer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="chlorophyll_data.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   body {
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+       min-height: 100vh;
+       padding: 20px;
+   }
+
+   .container {
+       max-width: 1600px;
+       margin: 0 auto;
+       background: white;
+       border-radius: 16px;
+       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+       overflow: hidden;
+   }
+
+   .header {
+       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+       color: white;
+       padding: 25px 30px;
+   }
+
+   .header-top {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 15px;
+   }
+
+   .header h1 {
+       font-size: 2em;
+       margin: 0;
+   }
+
+   .header-stats {
+       display: flex;
+       gap: 25px;
+       font-size: 0.9em;
+       opacity: 0.95;
+   }
+
+   .header-stat {
+       text-align: center;
+   }
+
+   .header-stat-label {
+       font-size: 0.75em;
+       opacity: 0.8;
+       text-transform: uppercase;
+       letter-spacing: 0.5px;
+   }
+
+   .header-stat-value {
+       font-size: 1.4em;
+       font-weight: 700;
+       margin-top: 3px;
+   }
+
+   .header p {
+       opacity: 0.9;
+       font-size: 1em;
+       margin: 0;
+   }
+
+   .main-content {
+       display: grid;
+       grid-template-columns: 300px 1fr;
+       gap: 0;
+   }
+
+   .sidebar {
+       background: #f8f9fa;
+       border-right: 1px solid #dee2e6;
+       padding: 20px;
+       max-height: 800px;
+       overflow-y: auto;
+   }
+
+   .sidebar h3 {
+       font-size: 0.9em;
+       color: #495057;
+       text-transform: uppercase;
+       letter-spacing: 0.5px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #dee2e6;
+   }
+
+   .date-range-control {
+       margin-bottom: 25px;
+   }
+
+   .date-range-control label {
+       display: block;
+       font-size: 0.85em;
+       font-weight: 600;
+       color: #6c757d;
+       margin-bottom: 5px;
+   }
+
+   .date-range-control input {
+       width: 100%;
+       padding: 8px;
+       border: 2px solid #dee2e6;
+       border-radius: 6px;
+       font-size: 0.9em;
+       margin-bottom: 8px;
+   }
+
+   .date-range-control input:focus {
+       outline: none;
+       border-color: #667eea;
+   }
+
+   .region-list {
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+   }
+
+   .region-item {
+       display: flex;
+       align-items: center;
+       padding: 8px 10px;
+       background: white;
+       border: 2px solid #dee2e6;
+       border-radius: 6px;
+       cursor: pointer;
+       transition: all 0.2s;
+       font-size: 0.9em;
+   }
+
+   .region-item:hover {
+       border-color: #667eea;
+       background: #f0f4ff;
+   }
+
+   .region-item input {
+       margin-right: 8px;
+       width: 16px;
+       height: 16px;
+       cursor: pointer;
+   }
+
+   .region-item.selected {
+       border-color: #667eea;
+       background: #e8eeff;
+   }
+
+   .legend-color {
+       width: 16px;
+       height: 16px;
+       border-radius: 3px;
+       margin-right: 8px;
+       flex-shrink: 0;
+   }
+
+   .region-label {
+       cursor: pointer;
+       flex: 1;
+       user-select: none;
+   }
+
+   .button-group {
+       display: flex;
+       gap: 8px;
+       margin-top: 15px;
+   }
+
+   button {
+       padding: 8px 12px;
+       border: none;
+       border-radius: 6px;
+       font-weight: 600;
+       cursor: pointer;
+       transition: all 0.2s;
+       font-size: 0.85em;
+       flex: 1;
+   }
+
+   .btn-primary {
+       background: #667eea;
+       color: white;
+   }
+
+   .btn-primary:hover {
+       background: #5568d3;
+       transform: translateY(-1px);
+       box-shadow: 0 3px 8px rgba(102, 126, 234, 0.4);
+   }
+
+   .btn-secondary {
+       background: #6c757d;
+       color: white;
+   }
+
+   .btn-secondary:hover {
+       background: #5a6268;
+   }
+
+   .content-area {
+       display: flex;
+       flex-direction: column;
+   }
+
+   .chart-container {
+       padding: 25px;
+       height: 500px;
+   }
+
+   .map-container {
+       padding: 25px;
+       padding-top: 10px;
+       height: 300px;
+   }
+
+   #map {
+       height: 100%;
+       border-radius: 8px;
+       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+   }
+
+   .error {
+       background: #f8d7da;
+       color: #721c24;
+       padding: 20px;
+       margin: 20px;
+       border-radius: 8px;
+       border-left: 4px solid #dc3545;
+   }
+
+   .leaflet-popup-content-wrapper {
+       border-radius: 8px;
+   }
+
+   .popup-content {
+       font-size: 0.9em;
+   }
+
+   .popup-content strong {
+       color: #667eea;
+       font-size: 1.1em;
+   }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-top">
+        <h1>🌊 Chlorophyll-a Time Series Viewer</h1>
+        <div class="header-stats" id="headerStats"></div>
+      </div>
+      <p>NOAA VIIRS Merged SNPP+NOAA-20 Near Real-Time Data</p>
+    </div>
+    <div class="main-content">
+      <div class="sidebar">
+        <div class="date-range-control">
+          <h3>Date Range</h3>
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" onchange="updateChart()">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" onchange="updateChart()">
+        </div>
+        <h3>Regions</h3>
+        <div class="region-list" id="regionList"></div>
+        <div class="button-group">
+          <button class="btn-primary" onclick="selectAllRegions()">All</button>
+          <button class="btn-secondary" onclick="deselectAllRegions()">None</button>
+        </div>
+      </div>
+      <div class="content-area">
+        <div class="chart-container">
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  let chartInstance = null;
+  let map = null;
+  let regionMarkers = {};
+
+  // Default color palette (used if colors not provided in data)
+  const defaultColors = [
+    '#667eea', '#764ba2', '#f093fb', '#4facfe',
+    '#43e97b', '#fa709a', '#fee140', '#30cfd0',
+    '#a8edea', '#fed6e3', '#c471f5', '#17ead9',
+    '#6a11cb', '#ff6b6b', '#4ecdc4', '#45b7d1',
+    '#96ceb4', '#ffeaa7', '#dfe6e9', '#74b9ff'
+  ];
+
+  function getRegionColor(region, index) {
+    // Use custom color if available, otherwise use default palette
+    if (typeof CHLOROPHYLL_DATA !== 'undefined' &&
+        CHLOROPHYLL_DATA.metadata.regions_metadata &&
+        CHLOROPHYLL_DATA.metadata.regions_metadata[region] &&
+        CHLOROPHYLL_DATA.metadata.regions_metadata[region].color) {
+      return CHLOROPHYLL_DATA.metadata.regions_metadata[region].color;
+    }
+    return defaultColors[index % defaultColors.length];
+  }
+
+  function getRegionCoordinates(region) {
+    // Get coordinates from metadata if available
+    if (typeof CHLOROPHYLL_DATA !== 'undefined' &&
+        CHLOROPHYLL_DATA.metadata.regions_metadata &&
+        CHLOROPHYLL_DATA.metadata.regions_metadata[region] &&
+        CHLOROPHYLL_DATA.metadata.regions_metadata[region].coordinates) {
+      return CHLOROPHYLL_DATA.metadata.regions_metadata[region].coordinates;
+    }
+    return null;
+  }
+
+  function initializeApp() {
+    if (typeof CHLOROPHYLL_DATA === 'undefined') {
+      showError('No data found. Make sure to embed CHLOROPHYLL_DATA in the HTML file.');
+      return;
+    }
+
+    updateHeaderStats(CHLOROPHYLL_DATA.metadata);
+    initializeDateRange(CHLOROPHYLL_DATA.metadata.date_range);
+    createRegionList(CHLOROPHYLL_DATA.metadata.regions);
+    initializeMap();
+    updateChart();
+  }
+
+  function updateHeaderStats(metadata) {
+    const stats = document.getElementById('headerStats');
+    stats.innerHTML = `
+                  <div class="header-stat">
+                      <div class="header-stat-label">Date Range</div>
+                      <div class="header-stat-value">${formatDateShort(metadata.date_range.start)} - ${formatDateShort(metadata.date_range.end)}</div>
+                  </div>
+                  <div class="header-stat">
+                      <div class="header-stat-label">Regions</div>
+                      <div class="header-stat-value">${metadata.total_regions}</div>
+                  </div>
+                  <div class="header-stat">
+                      <div class="header-stat-label">Data Points</div>
+                      <div class="header-stat-value">${metadata.data_points.toLocaleString()}</div>
+                  </div>`;
+  }
+
+  function formatDateShort(dateStr) {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }
+
+  function initializeDateRange(dateRange) {
+    document.getElementById('startDate').value = dateRange.start;
+    document.getElementById('endDate').value = dateRange.end;
+  }
+
+  function createRegionList(regions) {
+    const list = document.getElementById('regionList');
+    list.innerHTML = '';
+
+    regions.forEach((region, index) => {
+      const color = getRegionColor(region, index);
+      const div = document.createElement('div');
+      div.className = 'region-item selected';
+      div.innerHTML = `
+                      <input type="checkbox" id="region_${index}" value="${region}" checked onchange="toggleRegion(this)">
+                      <span class="legend-color" style="background-color: ${color}"></span>
+                      <span class="region-label" onclick="document.getElementById('region_${index}').click()">${region}</span>
+                  `;
+      list.appendChild(div);
+    });
+  }
+
+  function toggleRegion(checkbox) {
+    checkbox.closest('.region-item').classList.toggle('selected', checkbox.checked);
+    updateChart();
+
+    // Update map marker if exists
+    const region = checkbox.value;
+    if (regionMarkers[region]) {
+      const marker = regionMarkers[region];
+      if (checkbox.checked) {
+        marker.setOpacity(1);
+      } else {
+        marker.setOpacity(0.3);
+      }
+    }
+  }
+
+  function selectAllRegions() {
+    document.querySelectorAll('.region-item input').forEach(cb => {
+      cb.checked = true;
+      cb.closest('.region-item').classList.add('selected');
+    });
+    updateChart();
+    updateMapMarkers();
+  }
+
+  function deselectAllRegions() {
+    document.querySelectorAll('.region-item input').forEach(cb => {
+      cb.checked = false;
+      cb.closest('.region-item').classList.remove('selected');
+    });
+    updateChart();
+    updateMapMarkers();
+  }
+
+  function initializeMap() {
+    map = L.map('map').setView([25.0, -80.0], 4);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 10,
+    }).addTo(map);
+
+    // Add markers for regions if coordinates available
+    if (typeof CHLOROPHYLL_DATA !== 'undefined') {
+      let hasMarkers = false;
+
+      CHLOROPHYLL_DATA.metadata.regions.forEach((region, index) => {
+        const coords = getRegionCoordinates(region);
+        if (coords) {
+          hasMarkers = true;
+          const color = getRegionColor(region, index);
+          const marker = L.circleMarker(coords, {
+            radius: 8,
+            fillColor: color,
+            color: '#fff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+          }).addTo(map);
+
+          marker.bindPopup(`<div class="popup-content"><strong>${region}</strong><br>Click to toggle selection</div>`);
+
+          marker.on('click', () => {
+            const checkbox = document.getElementById(`region_${index}`);
+            checkbox.checked = !checkbox.checked;
+            toggleRegion(checkbox);
+          });
+
+          regionMarkers[region] = marker;
+        }
+      });
+
+      // If we have markers, fit the map to show all of them
+      if (hasMarkers && Object.keys(regionMarkers).length > 0) {
+        const group = L.featureGroup(Object.values(regionMarkers));
+        map.fitBounds(group.getBounds().pad(0.1));
+      }
+    }
+  }
+
+  function updateMapMarkers() {
+    Object.keys(regionMarkers).forEach(region => {
+      const checkbox = Array.from(document.querySelectorAll('.region-item input'))
+            .find(cb => cb.value === region);
+      if (checkbox && regionMarkers[region]) {
+        regionMarkers[region].setOpacity(checkbox.checked ? 1 : 0.3);
+      }
+    });
+  }
+
+  function updateChart() {
+    if (typeof CHLOROPHYLL_DATA === 'undefined') return;
+
+    const selectedRegions = Array.from(document.querySelectorAll('.region-item input:checked'))
+          .map(cb => cb.value);
+
+    if (selectedRegions.length === 0) {
+      if (chartInstance) {
+        chartInstance.destroy();
+        chartInstance = null;
+      }
+      return;
+    }
+
+    // Get date range
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+
+    // Filter data by date range
+    const filteredData = CHLOROPHYLL_DATA.data.filter(d => {
+      return d.date >= startDate && d.date <= endDate;
+    });
+
+    // Prepare datasets
+    const datasets = selectedRegions.map((region, index) => {
+      const regionIndex = CHLOROPHYLL_DATA.metadata.regions.indexOf(region);
+      const color = getRegionColor(region, regionIndex);
+      return {
+        label: region,
+        data: filteredData.map(d => ({
+          x: d.date,
+          y: d[region]
+        })),
+        borderColor: color,
+        backgroundColor: color + '20',
+        borderWidth: 2,
+        pointRadius: 2,
+        pointHoverRadius: 5,
+        tension: 0.1,
+        spanGaps: true
+      };
+    });
+
+    // Destroy existing chart
+    if (chartInstance) {
+      chartInstance.destroy();
+    }
+
+    // Create new chart
+    const ctx = document.getElementById('chart').getContext('2d');
+    chartInstance = new Chart(ctx, {
+      type: 'line',
+      data: { datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            labels: {
+              usePointStyle: true,
+              padding: 12,
+              font: { size: 11 }
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(0,0,0,0.8)',
+            padding: 12,
+            titleFont: { size: 13 },
+            bodyFont: { size: 12 },
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) label += ': ';
+                if (context.parsed.y !== null) {
+                  label += context.parsed.y.toFixed(3) + ' mg/m³';
+                } else {
+                  label += 'No data';
+                }
+                return label;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: 'time',
+            time: {
+              unit: 'day',
+              displayFormats: {
+                day: 'MMM dd',
+                week: 'MMM dd',
+                month: 'MMM yyyy'
+              }
+            },
+            title: {
+              display: true,
+              text: 'Date',
+              font: { size: 13, weight: 'bold' }
+            },
+            grid: {
+              display: false
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Chlorophyll-a (mg/m³)',
+              font: { size: 13, weight: 'bold' }
+            },
+            beginAtZero: false,
+            grid: {
+              color: 'rgba(0,0,0,0.05)'
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function showError(message) {
+    const container = document.querySelector('.container');
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error';
+    errorDiv.innerHTML = `<strong>Error:</strong> ${message}`;
+    container.insertBefore(errorDiv, container.firstChild);
+  }
+
+  // Initialize on page load
+  window.addEventListener('DOMContentLoaded', initializeApp);
+ </script>
+ </body>
+</html>
