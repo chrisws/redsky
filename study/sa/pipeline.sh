@@ -45,7 +45,8 @@ echo "Updating" && \
     echo "![Victor Harbour-Mt Gambier](${STUDY_1}/images/viirs_timeseries_VictorHarbourMtGambier.png)" >> ${MARKDOWN} && \
     echo "![Mt Gambier](${STUDY_1}/images/viirs_timeseries_MtGambier.png)" >> ${MARKDOWN} && \
     echo "![Port Fairy](${STUDY_1}/images/viirs_timeseries_PortFairy.png)" >> ${MARKDOWN} && \
-    echo '### Yearly mean values' >> ${MARKDOWN} && \
+    (cd ${VIIRS} && python viirs_energy_analysis.py --regions ${STUDY}/regions.json ${STUDY}/sst.csv --plot ${STUDY}/images/energy.png --output ${STUDY}/energy.csv >> ${MARKDOWN_1}) && \
+    echo '### Yearly mean values (chlr-a)' >> ${MARKDOWN} && \
     echo '```' >> ${MARKDOWN}&& \
     (cd ${VIIRS} && python viirs_yearly_mean.py ${STUDY}/chlr-a.csv >> ${MARKDOWN_1}) && \
     echo '```' >> ${MARKDOWN} && \
@@ -53,6 +54,5 @@ echo "Updating" && \
     cat NOTES.md >> ${MARKDOWN} && \
     echo >> ${MARKDOWN} && \
     echo '---' >> ${MARKDOWN} && \
-    (cd ${VIIRS} && python viirs_energy_analysis.py --regions ${STUDY}/regions.json ${STUDY}/sst.csv --plot ${STUDY}/images/energy.png --output ${STUDY}/energy.csv >> ${MARKDOWN_1}) && \    
     echo Last updated: `date` >> ${MARKDOWN} && \
-    optipng -clobber images/*.png 
+    optipng -clobber images/*.png
