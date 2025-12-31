@@ -53,6 +53,6 @@ echo "Updating" && \
     cat NOTES.md >> ${MARKDOWN} && \
     echo >> ${MARKDOWN} && \
     echo '---' >> ${MARKDOWN} && \
-    (cd ${VIIRS} && python viirs_energy_analysis.py --regions ${STUDY}/regions.json ${STUDY}/sst.csv --plot ${STUDY}/images/energy.png --output ${STUDY}/energy.csv) && \    
+    (cd ${VIIRS} && python viirs_energy_analysis.py --regions ${STUDY}/regions.json ${STUDY}/sst.csv --plot ${STUDY}/images/energy.png --output ${STUDY}/energy.csv >> ${MARKDOWN_1}) && \    
     echo Last updated: `date` >> ${MARKDOWN} && \
-    optipng images/*.png
+    optipng -clobber images/*.png 

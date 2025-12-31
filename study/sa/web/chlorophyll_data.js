@@ -1,6 +1,6 @@
 const CHLOROPHYLL_DATA = {
   "metadata": {
-    "generated": "2025-12-30T23:47:16.079970Z",
+    "generated": "2025-12-30T23:50:38.214644Z",
     "date_range": {
       "start": "2025-01-01",
       "end": "2025-12-28"

@@ -18,8 +18,20 @@ def plot_regions(title, output_png, regions, colors):
     # Set up the map projection
     ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
 
-    # Set extent to cover South Australia coast
-    ax.set_extent([130, 148, -40.5, -30], crs=ccrs.PlateCarree())
+    min_lon = 999
+    max_lon  = -999
+    min_lat = 999
+    max_lat = -999
+    for region_name, bbox in regions.items():
+        lon1, lon2, lat1, lat2 = bbox
+        min_lon = min(min_lon, min(lon1, lon2))
+        max_lon = max(max_lon, max(lon1, lon2))
+        min_lat = min(min_lat, min(lat1, lat2))
+        max_lat = max(max_lat, max(lat1, lat2))
+
+    # Set extent to cover bounding region
+    offset = 1.5
+    ax.set_extent([min_lon - offset, max_lon + offset, min_lat - offset, max_lat + offset], crs=ccrs.PlateCarree())
 
     # Use higher resolution coastlines
     ax.coastlines(resolution='10m')  # Options: '110m', '50m', '10m'
