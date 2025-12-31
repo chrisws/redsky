@@ -299,11 +299,9 @@ def calculate_comprehensive_energy_analysis(df, regions, depth=10,
         
         # Print Marine Heat Wave details
         if num_mhw > 0:
-            print(f"  - MARINE HEAT WAVES DETECTED: {num_mhw} events ({total_mhw_days} total days)")
-            print(f"    90th percentile threshold: {sst_90:.2f}°C")
-            print(f"    Details:")
+            print(f"  - MARINE HEAT WAVES DETECTED: {num_mhw} events ({total_mhw_days} total days) 90th percentile threshold: {sst_90:.2f}°C")
             for idx, event in mhw_events.iterrows():
-                print(f"      • {event['start_date'].strftime('%Y-%m-%d')} to {event['end_date'].strftime('%Y-%m-%d')}: "
+                print(f"      - {event['start_date'].strftime('%Y-%m-%d')} to {event['end_date'].strftime('%Y-%m-%d')}: "
                       f"{int(event['duration_days'])} days, "
                       f"mean {event['mean_sst']:.2f}°C (+{event['intensity']:.2f}°C), "
                       f"max {event['max_sst']:.2f}°C (+{event['max_intensity']:.2f}°C)")
