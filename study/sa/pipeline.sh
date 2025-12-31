@@ -2,6 +2,7 @@
 
 VIIRS=../../viirs
 STUDY=../study/sa
+STUDY_1=./study/sa
 MARKDOWN=../../README.md
 MARKDOWN_1=../README.md
 
@@ -26,26 +27,26 @@ echo "Updating" && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Mt Gambier' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Port Fairy' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_map.py "Region map" ${STUDY}/regions.json ${STUDY}/images/map.png) && \
-    (cd ${VIIRS} && python viirs_energy_analysis.py --regions ../study/sa/regions.json ../study/sa/sst.csv --plot ../study/sa/images/energy.png --output ../study/sa/energy.csv) && \
-    (cd ${VIIRS} && python viirs_hab_analysis.py --regions ../study/sa/regions.json ../study/sa/chlr-a.csv --plot ../study/sa/images/hab.png --report ../study/sa/hab.md) && \
+    (cd ${VIIRS} && python viirs_hab_analysis.py --regions ${STUDY}/regions.json ${STUDY}/chlr-a.csv --plot ${STUDY}/images/hab.png --report ${STUDY}/hab.md) && \
     echo '## South Australian algal bloom investigation with VIIRS SST and Chlr-A data' > ${MARKDOWN} && \
-    echo '![Regions](./study/sa/images/map.png)' >> ${MARKDOWN} && \
-    echo '![GAB](./study/sa/images/viirs_timeseries_GAB.png)' >> ${MARKDOWN} && \
-    echo '![Ceduna](./study/sa/images/viirs_timeseries_Ceduna.png)' >> ${MARKDOWN} && \
-    echo '![Port Lincoln](./study/sa/images/viirs_timeseries_PortLincoln.png)' >> ${MARKDOWN} && \
-    echo '![Spencer Gulf N](./study/sa/images/viirs_timeseries_SpencerGulfN.png)' >> ${MARKDOWN} && \
-    echo '![Spencer Gulf E](./study/sa/images/viirs_timeseries_SpencerGulfS.png)' >> ${MARKDOWN} && \
-    echo '![SVG - NW](./study/sa/images/viirs_timeseries_SVGNW.png)' >> ${MARKDOWN} && \
-    echo '![SVG - NE](./study/sa/images/viirs_timeseries_SVGNE.png)' >> ${MARKDOWN} && \
-    echo '![SVG - SW](./study/sa/images/viirs_timeseries_SVGSW.png)' >> ${MARKDOWN} && \
-    echo '![SVG - SE](./study/sa/images/viirs_timeseries_SVGSE.png)' >> ${MARKDOWN} && \
-    echo '![KI - W](./study/sa/images/viirs_timeseries_KIW.png)' >> ${MARKDOWN} && \
-    echo '![KI - E](./study/sa/images/viirs_timeseries_KIE.png)' >> ${MARKDOWN} && \
-    echo '![Victor Harbor](./study/sa/images/viirs_timeseries_VictorHarbor.png)' >> ${MARKDOWN} && \
-    echo '![Victor Harbour-Mt Gambier](./study/sa/images/viirs_timeseries_VictorHarbourMtGambier.png)' >> ${MARKDOWN} && \
-    echo '![Mt Gambier](./study/sa/images/viirs_timeseries_MtGambier.png)' >> ${MARKDOWN} && \
-    echo '![Port Fairy](./study/sa/images/viirs_timeseries_PortFairy.png)' >> ${MARKDOWN} && \
-    echo '### Yearly mean values' >> ${MARKDOWN} && \
+    echo "![Regions](${STUDY_1}/images/map.png)" >> ${MARKDOWN} && \
+    echo "![GAB](${STUDY_1}/images/viirs_timeseries_GAB.png)" >> ${MARKDOWN} && \
+    echo "![Ceduna](${STUDY_1}/images/viirs_timeseries_Ceduna.png)" >> ${MARKDOWN} && \
+    echo "![Port Lincoln](${STUDY_1}/images/viirs_timeseries_PortLincoln.png)" >> ${MARKDOWN} && \
+    echo "![Spencer Gulf N](${STUDY_1}/images/viirs_timeseries_SpencerGulfN.png)" >> ${MARKDOWN} && \
+    echo "![Spencer Gulf E](${STUDY_1}/images/viirs_timeseries_SpencerGulfS.png)" >> ${MARKDOWN} && \
+    echo "![SVG - NW](${STUDY_1}/images/viirs_timeseries_SVGNW.png)" >> ${MARKDOWN} && \
+    echo "![SVG - NE](${STUDY_1}/images/viirs_timeseries_SVGNE.png)" >> ${MARKDOWN} && \
+    echo "![SVG - SW](${STUDY_1}/images/viirs_timeseries_SVGSW.png)" >> ${MARKDOWN} && \
+    echo "![SVG - SE](${STUDY_1}/images/viirs_timeseries_SVGSE.png)" >> ${MARKDOWN} && \
+    echo "![KI - W](${STUDY_1}/images/viirs_timeseries_KIW.png)" >> ${MARKDOWN} && \
+    echo "![KI - E](${STUDY_1}/images/viirs_timeseries_KIE.png)" >> ${MARKDOWN} && \
+    echo "![Victor Harbor](${STUDY_1}/images/viirs_timeseries_VictorHarbor.png)" >> ${MARKDOWN} && \
+    echo "![Victor Harbour-Mt Gambier](${STUDY_1}/images/viirs_timeseries_VictorHarbourMtGambier.png)" >> ${MARKDOWN} && \
+    echo "![Mt Gambier](${STUDY_1}/images/viirs_timeseries_MtGambier.png)" >> ${MARKDOWN} && \
+    echo "![Port Fairy](${STUDY_1}/images/viirs_timeseries_PortFairy.png)" >> ${MARKDOWN} && \
+    (cd ${VIIRS} && python viirs_energy_analysis.py --regions ${STUDY}/regions.json ${STUDY}/sst.csv --plot ${STUDY}/images/energy.png --output ${STUDY}/energy.csv >> ${MARKDOWN_1}) && \
+    echo '### Yearly mean values (chlr-a)' >> ${MARKDOWN} && \
     echo '```' >> ${MARKDOWN}&& \
     (cd ${VIIRS} && python viirs_yearly_mean.py ${STUDY}/chlr-a.csv >> ${MARKDOWN_1}) && \
     echo '```' >> ${MARKDOWN} && \
@@ -54,4 +55,4 @@ echo "Updating" && \
     echo >> ${MARKDOWN} && \
     echo '---' >> ${MARKDOWN} && \
     echo Last updated: `date` >> ${MARKDOWN} && \
-    optipng images/*.png
+    optipng -clobber images/*.png
