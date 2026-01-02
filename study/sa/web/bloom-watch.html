@@ -616,6 +616,14 @@
             titleFont: { size: 13 },
             bodyFont: { size: 12 },
             callbacks: {
+              title: function(context) {
+                const date = new Date(context[0].parsed.x);
+                return date.toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'short', 
+                  day: 'numeric'
+                });
+              },
               label: function(context) {
                 let label = context.dataset.label || '';
                 if (label) label += ': ';
@@ -635,9 +643,9 @@
             time: {
               unit: 'day',
               displayFormats: {
-                day: 'MMM dd',
+                day: 'MMM dd yy',
                 week: 'MMM dd',
-                month: 'MMM yyyy'
+                month: 'MMM yyyy',
               }
             },
             title: {
