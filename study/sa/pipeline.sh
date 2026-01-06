@@ -22,7 +22,9 @@ echo "Updating" && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'SVG - SE' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'KI - W' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'KI - E' ${STUDY}/images) && \
-    (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Victor Harbor' ${STUDY}/images) && \
+    (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Victor - E' ${STUDY}/images) && \
+    (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Victor - W' ${STUDY}/images) && \
+    (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Lk Alex' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Victor Harbour-Mt Gambier' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Mt Gambier' ${STUDY}/images) && \
     (cd ${VIIRS} && python viirs_plot.py ${STUDY}/sst.csv ${STUDY}/chlr-a.csv 20180105 'Port Fairy' ${STUDY}/images) && \
@@ -41,7 +43,9 @@ echo "Updating" && \
     echo "![SVG - SE](${STUDY_1}/images/viirs_timeseries_SVGSE.png)" >> ${MARKDOWN} && \
     echo "![KI - W](${STUDY_1}/images/viirs_timeseries_KIW.png)" >> ${MARKDOWN} && \
     echo "![KI - E](${STUDY_1}/images/viirs_timeseries_KIE.png)" >> ${MARKDOWN} && \
-    echo "![Victor Harbor](${STUDY_1}/images/viirs_timeseries_VictorHarbor.png)" >> ${MARKDOWN} && \
+    echo "![Victor - W](${STUDY_1}/images/viirs_timeseries_VictorW.png)" >> ${MARKDOWN} && \
+    echo "![Victor - E](${STUDY_1}/images/viirs_timeseries_VictorE.png)" >> ${MARKDOWN} && \
+    echo "![Lk Alex](${STUDY_1}/images/viirs_timeseries_LkAlex.png)" >> ${MARKDOWN} && \
     echo "![Victor Harbour-Mt Gambier](${STUDY_1}/images/viirs_timeseries_VictorHarbourMtGambier.png)" >> ${MARKDOWN} && \
     echo "![Mt Gambier](${STUDY_1}/images/viirs_timeseries_MtGambier.png)" >> ${MARKDOWN} && \
     echo "![Port Fairy](${STUDY_1}/images/viirs_timeseries_PortFairy.png)" >> ${MARKDOWN} && \

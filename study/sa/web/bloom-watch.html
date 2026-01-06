@@ -23,6 +23,10 @@
        padding: 20px;
    }
 
+   a {
+     color: white;
+   }
+
    .container {
        max-width: 1600px;
        margin: 0 auto;
@@ -329,7 +333,14 @@
         <h1>🌊 Chlorophyll-a Time Series Viewer</h1>
         <div class="header-stats" id="headerStats"></div>
       </div>
-      <p>NOAA VIIRS Merged SNPP+NOAA-20 Near Real-Time Data</p>
+      <span>
+      </span>
+        NOAA CoastWatch
+      <span>
+        <a href="https://coastwatch.noaa.gov/cwn/products/noaa-msl12-ocean-color-near-real-time-viirs-multi-sensor-snpp-noaa-20-daily-merge.html" target="new">
+          VIIRS Merged SNPP+NOAA-20 Near Real-Time Data
+        </a>
+      </span>
     </div>
     <div class="main-content">
       <div class="sidebar">
@@ -618,9 +629,9 @@
             callbacks: {
               title: function(context) {
                 const date = new Date(context[0].parsed.x);
-                return date.toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'short', 
+                return date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
                   day: 'numeric'
                 });
               },
