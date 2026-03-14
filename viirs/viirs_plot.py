@@ -84,8 +84,7 @@ def normalize_series(series, method='minmax'):
     else:
         raise ValueError("Method must be 'minmax', 'zscore', or 'robust'")
 
-def create_plot(df, col, normalization_method='minmax', figsize=(16, 10),
-                fill_gaps=True, max_gap_days=10):
+def create_plot(df, col, max_gap_days, normalization_method='minmax', figsize=(16, 10), fill_gaps=True):
     """Create enhanced multi-axis plot with gap filling and actual value axes."""
     print(f"\n🎨 Creating visualization...")
 
@@ -236,6 +235,12 @@ def main():
         type=str,
         help='The column to plot'
     )
+    parser.add_argument(
+        '--max_gap_days',
+        type=int,
+        default=10,
+        help='Max Gap days'
+    )
     args = parser.parse_args()
 
     sst_filename = args.sst_filename
@@ -243,6 +248,7 @@ def main():
     start_date = args.start_date
     col = args.column_name
     output_folder = args.output_folder
+    print (f"📈 Max gaps = {args.max_gap_days}")
 
     df_sst = load_and_prepare_data(sst_filename, start_date, col)
     if df_sst is None:
@@ -260,7 +266,7 @@ def main():
     df = df_sst[['date', col]].merge(df_chl[['date', col]], on='date', suffixes=('_sst','_chlr_a'))
 
     # Create main time series plot
-    fig1, axes = create_plot(df, col, normalization_method='minmax')
+    fig1, axes = create_plot(df, col, args.max_gap_days, normalization_method='minmax')
     if fig1:
         # plt.show()
 

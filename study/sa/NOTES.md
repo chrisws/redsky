@@ -58,3 +58,8 @@ Algae need nutrients (primarily nitrogen and phosphorus) to grow. Excessive nutr
 - Definitive source apportionment
 - For details, see: https://pubmed.ncbi.nlm.nih.gov/23602260/
 
+### Lake Alexandrina
+
+- Refer to the "Chlorophyll-a Time Series Viewer" for an alternative visualisation
+- This uses a merged dataset from two satellites (still VIIRS, but NRT) for improved gap filling
+- Or just drive down Point Sturt road and see for yourself :)
