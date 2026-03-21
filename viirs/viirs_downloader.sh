@@ -6,8 +6,10 @@
 set -euo pipefail
 
 # Configuration
-BASE_URL="https://oceandata.sci.gsfc.nasa.gov/cgi/getfile"
+BASE_URL="https://oceandata.sci.gsfc.nasa.gov/getfile"
 COOKIE_FILE=$(mktemp)
+
+# https://oceandata.sci.gsfc.nasa.gov/getfile/JPSS1_VIIRS.20260101.L3m.DAY.NSST.sst.4km.nc
 
 # Cleanup on exit
 trap 'rm -f "$COOKIE_FILE"' EXIT
