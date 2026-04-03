@@ -292,6 +292,12 @@ been building.
 
 ---
 
+## Temperature gradients
+
+![TAS](./study/tas/images/map_gradients.png)
+![SA](./study/sa/images/map_gradients.png)
+![GAB](./study/gab/images/map_gradients.png)
+
 ## Summary
 
 | Theme | VIIRS evidence | Bloom connection |
