@@ -20,260 +20,341 @@
 ![Victor Harbour-Mt Gambier](./study/sa/images/viirs_timeseries_VictorHarbourMtGambier.png)
 ![Mt Gambier](./study/sa/images/viirs_timeseries_MtGambier.png)
 ![Pt Fairy](./study/sa/images/viirs_timeseries_PtFairy.png)
-## Ocean thermal energy analysis
-- Mixed layer depth: 10.0m
-- Grid cell area: 0.5625 km²
-- Baseline temperature: 15.0°C
+## Ocean temperature analysis
 
-### GAB:
-  - SST: 17.50°C  |  Trend: -0.1213°C/yr (p=0.0000)
-  - Heating DD/yr: 563.6  |  Cooling DD/yr: 5.6
-  - MARINE HEAT WAVES DETECTED: 9 events (88 total days) 90th percentile threshold: 20.01°C
-      - 2018-01-17 to 2018-01-28: 7 days, mean 21.58°C (+1.57°C), max 24.14°C (+4.14°C)
-      - 2018-02-05 to 2018-02-27: 12 days, mean 20.66°C (+0.65°C), max 21.45°C (+1.45°C)
-      - 2018-04-16 to 2018-04-21: 5 days, mean 20.37°C (+0.37°C), max 20.71°C (+0.70°C)
-      - 2019-02-07 to 2019-03-13: 21 days, mean 20.85°C (+0.84°C), max 21.79°C (+1.79°C)
-      - 2019-03-16 to 2019-03-21: 5 days, mean 20.39°C (+0.38°C), max 21.24°C (+1.23°C)
-      - 2020-01-26 to 2020-02-10: 10 days, mean 20.80°C (+0.80°C), max 21.45°C (+1.44°C)
-      - 2023-02-18 to 2023-02-25: 7 days, mean 20.65°C (+0.65°C), max 21.26°C (+1.26°C)
-      - 2025-01-09 to 2025-01-14: 5 days, mean 20.67°C (+0.66°C), max 21.30°C (+1.30°C)
-      - 2025-01-16 to 2025-02-07: 16 days, mean 20.84°C (+0.84°C), max 21.85°C (+1.84°C)
+- Water depth measured: 10.0 m
+- Sampling area per cell: 0.5625 km²
+- Reference temperature: 15.0°C
 
-### Ceduna W:
-  - SST: 17.07°C  |  Trend: -0.0859°C/yr (p=0.0001)
-  - Heating DD/yr: 403.2  |  Cooling DD/yr: 14.5
-  - MARINE HEAT WAVES DETECTED: 9 events (61 total days) 90th percentile threshold: 19.51°C
-      - 2018-01-18 to 2018-01-25: 5 days, mean 20.47°C (+0.97°C), max 21.49°C (+1.98°C)
-      - 2018-02-06 to 2018-02-17: 6 days, mean 20.40°C (+0.90°C), max 21.64°C (+2.13°C)
-      - 2019-01-27 to 2019-02-03: 6 days, mean 20.09°C (+0.58°C), max 20.83°C (+1.32°C)
-      - 2019-02-23 to 2019-03-01: 6 days, mean 20.62°C (+1.11°C), max 21.16°C (+1.65°C)
-      - 2019-12-28 to 2020-01-03: 5 days, mean 20.52°C (+1.01°C), max 21.03°C (+1.53°C)
-      - 2020-01-27 to 2020-02-12: 9 days, mean 20.51°C (+1.00°C), max 21.81°C (+2.30°C)
-      - 2023-02-19 to 2023-02-25: 6 days, mean 20.37°C (+0.86°C), max 21.04°C (+1.54°C)
-      - 2025-01-09 to 2025-01-14: 5 days, mean 19.93°C (+0.42°C), max 20.60°C (+1.09°C)
-      - 2025-01-16 to 2025-02-08: 13 days, mean 20.31°C (+0.80°C), max 22.38°C (+2.87°C)
+### GAB
 
-### Ceduna E:
-  - SST: 16.64°C  |  Trend: -0.0973°C/yr (p=0.0000)
-  - Heating DD/yr: 361.7  |  Cooling DD/yr: 26.8
-  - MARINE HEAT WAVES DETECTED: 10 events (71 total days) 90th percentile threshold: 18.85°C
-      - 2018-01-18 to 2018-01-25: 6 days, mean 19.78°C (+0.93°C), max 20.77°C (+1.92°C)
-      - 2018-02-06 to 2018-02-15: 5 days, mean 19.52°C (+0.67°C), max 21.31°C (+2.46°C)
-      - 2018-04-19 to 2018-04-24: 5 days, mean 19.15°C (+0.30°C), max 19.45°C (+0.60°C)
-      - 2019-01-22 to 2019-02-04: 11 days, mean 19.86°C (+1.01°C), max 21.53°C (+2.68°C)
-      - 2019-02-23 to 2019-03-05: 8 days, mean 19.87°C (+1.03°C), max 20.75°C (+1.90°C)
-      - 2020-02-07 to 2020-02-15: 6 days, mean 19.83°C (+0.99°C), max 21.10°C (+2.25°C)
-      - 2023-02-20 to 2023-02-25: 5 days, mean 20.40°C (+1.55°C), max 21.79°C (+2.94°C)
-      - 2025-01-07 to 2025-01-27: 13 days, mean 19.70°C (+0.86°C), max 20.83°C (+1.98°C)
-      - 2025-02-01 to 2025-02-08: 6 days, mean 19.14°C (+0.30°C), max 19.59°C (+0.74°C)
-      - 2025-02-24 to 2025-03-24: 6 days, mean 19.23°C (+0.38°C), max 19.71°C (+0.86°C)
+- **Average temperature:** 17.5°C (range 13.2–24.1°C)
+- **Cooling trend:** -0.121°C per year (±0.038°C) — statistically reliable
+- **Days warmer than normal per year:** 564 &nbsp; **Cooler than normal:** 6
 
-### Pt Lincoln W:
-  - SST: 16.35°C  |  Trend: -0.0974°C/yr (p=0.0000)
-  - Heating DD/yr: 285.3  |  Cooling DD/yr: 25.5
-  - MARINE HEAT WAVES DETECTED: 8 events (58 total days) 90th percentile threshold: 18.44°C
-      - 2018-01-16 to 2018-01-21: 5 days, mean 19.60°C (+1.15°C), max 20.85°C (+2.40°C)
-      - 2018-04-08 to 2018-04-14: 5 days, mean 18.80°C (+0.36°C), max 19.05°C (+0.61°C)
-      - 2018-04-17 to 2018-04-24: 7 days, mean 18.85°C (+0.40°C), max 19.23°C (+0.78°C)
-      - 2019-01-19 to 2019-01-29: 7 days, mean 19.24°C (+0.79°C), max 20.40°C (+1.96°C)
-      - 2019-02-23 to 2019-03-02: 6 days, mean 19.41°C (+0.96°C), max 20.31°C (+1.86°C)
-      - 2021-04-01 to 2021-04-08: 6 days, mean 18.76°C (+0.32°C), max 19.15°C (+0.70°C)
-      - 2023-02-15 to 2023-02-26: 9 days, mean 19.15°C (+0.71°C), max 20.32°C (+1.88°C)
-      - 2025-01-12 to 2025-02-02: 13 days, mean 19.18°C (+0.74°C), max 20.39°C (+1.95°C)
+**9 heat waves detected (88 days total)** — unusually warm threshold: above 20.0°C
 
-### Pt Lincoln E:
-  - SST: 16.80°C  |  Trend: -0.0845°C/yr (p=0.0010)
-  - Heating DD/yr: 385.8  |  Cooling DD/yr: 45.6
-  - MARINE HEAT WAVES DETECTED: 7 events (56 total days) 90th percentile threshold: 19.96°C
-      - 2018-02-05 to 2018-03-10: 16 days, mean 20.85°C (+0.89°C), max 22.52°C (+2.56°C)
-      - 2018-04-07 to 2018-04-12: 5 days, mean 20.34°C (+0.38°C), max 20.71°C (+0.75°C)
-      - 2019-01-22 to 2019-02-04: 11 days, mean 20.89°C (+0.93°C), max 22.08°C (+2.12°C)
-      - 2019-02-20 to 2019-03-03: 8 days, mean 21.34°C (+1.38°C), max 23.45°C (+3.49°C)
-      - 2020-02-07 to 2020-02-18: 5 days, mean 20.39°C (+0.44°C), max 20.99°C (+1.03°C)
-      - 2025-02-11 to 2025-02-18: 5 days, mean 21.59°C (+1.64°C), max 22.86°C (+2.90°C)
-      - 2025-02-22 to 2025-03-23: 6 days, mean 21.01°C (+1.05°C), max 22.88°C (+2.92°C)
+  - Jan 17 2018 – Jan 28 2018: **7 days** · avg 21.6°C (+1.6°C above threshold) · peak 24.1°C (+4.1°C)
+  - Feb 5 2018 – Feb 27 2018: **12 days** · avg 20.7°C (+0.6°C above threshold) · peak 21.5°C (+1.4°C)
+  - Apr 16 2018 – Apr 21 2018: **5 days** · avg 20.4°C (+0.4°C above threshold) · peak 20.7°C (+0.7°C)
+  - Feb 7 2019 – Mar 13 2019: **21 days** · avg 20.9°C (+0.8°C above threshold) · peak 21.8°C (+1.8°C)
+  - Mar 16 2019 – Mar 21 2019: **5 days** · avg 20.4°C (+0.4°C above threshold) · peak 21.2°C (+1.2°C)
+  - Jan 26 2020 – Feb 10 2020: **10 days** · avg 20.8°C (+0.8°C above threshold) · peak 21.5°C (+1.4°C)
+  - Feb 18 2023 – Feb 25 2023: **7 days** · avg 20.7°C (+0.6°C above threshold) · peak 21.3°C (+1.3°C)
+  - Jan 9 2025 – Jan 14 2025: **5 days** · avg 20.7°C (+0.7°C above threshold) · peak 21.3°C (+1.3°C)
+  - Jan 16 2025 – Feb 7 2025: **16 days** · avg 20.8°C (+0.8°C above threshold) · peak 21.9°C (+1.8°C)
 
-### Spencer Gulf N:
-  - SST: 17.74°C  |  Trend: -0.0124°C/yr (p=0.7545)
-  - Heating DD/yr: 699.3  |  Cooling DD/yr: 113.9
-  - MARINE HEAT WAVES DETECTED: 12 events (90 total days) 90th percentile threshold: 22.62°C
-      - 2018-01-19 to 2018-01-26: 5 days, mean 24.03°C (+1.41°C), max 24.62°C (+2.00°C)
-      - 2018-02-05 to 2018-02-28: 11 days, mean 23.30°C (+0.68°C), max 25.58°C (+2.96°C)
-      - 2019-01-14 to 2019-01-30: 7 days, mean 23.59°C (+0.97°C), max 24.53°C (+1.90°C)
-      - 2019-02-02 to 2019-02-09: 6 days, mean 23.60°C (+0.98°C), max 24.33°C (+1.70°C)
-      - 2019-02-24 to 2019-03-03: 7 days, mean 23.85°C (+1.23°C), max 24.83°C (+2.21°C)
-      - 2022-01-26 to 2022-02-02: 6 days, mean 23.72°C (+1.10°C), max 24.32°C (+1.69°C)
-      - 2023-01-12 to 2023-01-20: 6 days, mean 23.14°C (+0.52°C), max 24.05°C (+1.43°C)
-      - 2023-02-20 to 2023-02-26: 5 days, mean 23.84°C (+1.21°C), max 24.72°C (+2.09°C)
-      - 2024-01-12 to 2024-01-25: 6 days, mean 23.29°C (+0.67°C), max 25.22°C (+2.59°C)
-      - 2024-02-18 to 2024-03-03: 10 days, mean 23.39°C (+0.77°C), max 23.95°C (+1.33°C)
-      - 2025-01-10 to 2025-01-29: 13 days, mean 23.57°C (+0.95°C), max 24.22°C (+1.60°C)
-      - 2025-02-06 to 2025-02-19: 8 days, mean 23.68°C (+1.06°C), max 24.76°C (+2.13°C)
+### Ceduna W
 
-### Spencer Gulf C:
-  - SST: 17.26°C  |  Trend: -0.0489°C/yr (p=0.1557)
-  - Heating DD/yr: 518.5  |  Cooling DD/yr: 83.0
-  - MARINE HEAT WAVES DETECTED: 9 events (86 total days) 90th percentile threshold: 21.36°C
-      - 2018-01-19 to 2018-01-25: 5 days, mean 22.21°C (+0.85°C), max 23.16°C (+1.81°C)
-      - 2018-02-05 to 2018-02-28: 10 days, mean 21.95°C (+0.59°C), max 22.35°C (+0.99°C)
-      - 2018-03-04 to 2018-03-10: 5 days, mean 21.66°C (+0.31°C), max 22.02°C (+0.67°C)
-      - 2019-01-22 to 2019-02-12: 15 days, mean 22.07°C (+0.71°C), max 23.09°C (+1.74°C)
-      - 2019-02-20 to 2019-03-13: 13 days, mean 22.19°C (+0.84°C), max 23.30°C (+1.94°C)
-      - 2023-02-20 to 2023-02-26: 5 days, mean 22.24°C (+0.88°C), max 22.95°C (+1.59°C)
-      - 2024-02-08 to 2024-02-13: 5 days, mean 21.86°C (+0.50°C), max 22.33°C (+0.98°C)
-      - 2025-01-16 to 2025-02-03: 12 days, mean 22.36°C (+1.00°C), max 23.14°C (+1.78°C)
-      - 2025-02-06 to 2025-03-02: 16 days, mean 22.33°C (+0.98°C), max 23.82°C (+2.46°C)
+- **Average temperature:** 17.1°C (range 12.9–23.6°C)
+- **Cooling trend:** -0.086°C per year (±0.042°C) — statistically reliable
+- **Days warmer than normal per year:** 403 &nbsp; **Cooler than normal:** 14
 
-### Spencer Gulf S:
-  - SST: 16.86°C  |  Trend: -0.0746°C/yr (p=0.0082)
-  - Heating DD/yr: 419.6  |  Cooling DD/yr: 62.6
-  - MARINE HEAT WAVES DETECTED: 7 events (74 total days) 90th percentile threshold: 20.33°C
-      - 2018-01-19 to 2018-01-25: 5 days, mean 21.26°C (+0.93°C), max 22.27°C (+1.94°C)
-      - 2018-02-05 to 2018-02-15: 6 days, mean 21.07°C (+0.74°C), max 21.81°C (+1.48°C)
-      - 2018-02-17 to 2018-03-06: 10 days, mean 20.81°C (+0.48°C), max 21.55°C (+1.22°C)
-      - 2019-01-22 to 2019-02-10: 13 days, mean 21.19°C (+0.86°C), max 22.19°C (+1.86°C)
-      - 2019-02-21 to 2019-03-07: 11 days, mean 21.45°C (+1.12°C), max 22.40°C (+2.07°C)
-      - 2025-01-18 to 2025-02-19: 23 days, mean 21.50°C (+1.17°C), max 22.70°C (+2.37°C)
-      - 2025-02-24 to 2025-03-24: 6 days, mean 20.89°C (+0.56°C), max 21.54°C (+1.21°C)
+**9 heat waves detected (61 days total)** — unusually warm threshold: above 19.5°C
 
-### SVG - NW:
-  - SST: 17.36°C  |  Trend: -0.0573°C/yr (p=0.2323)
-  - Heating DD/yr: 418.1  |  Cooling DD/yr: 91.0
-  - MARINE HEAT WAVES DETECTED: 8 events (62 total days) 90th percentile threshold: 22.08°C
-      - 2018-02-05 to 2018-03-06: 7 days, mean 22.72°C (+0.64°C), max 24.52°C (+2.44°C)
-      - 2019-01-12 to 2019-02-10: 16 days, mean 23.35°C (+1.27°C), max 26.59°C (+4.51°C)
-      - 2019-02-24 to 2019-03-03: 7 days, mean 23.52°C (+1.45°C), max 24.30°C (+2.22°C)
-      - 2019-12-29 to 2020-01-14: 6 days, mean 22.78°C (+0.70°C), max 23.92°C (+1.84°C)
-      - 2023-01-09 to 2023-01-17: 5 days, mean 22.63°C (+0.55°C), max 23.01°C (+0.93°C)
-      - 2024-02-18 to 2024-02-27: 5 days, mean 22.69°C (+0.61°C), max 23.47°C (+1.39°C)
-      - 2025-01-10 to 2025-01-27: 9 days, mean 23.29°C (+1.21°C), max 24.04°C (+1.96°C)
-      - 2025-02-02 to 2025-02-12: 7 days, mean 23.28°C (+1.20°C), max 23.99°C (+1.91°C)
+  - Jan 18 2018 – Jan 25 2018: **5 days** · avg 20.5°C (+1.0°C above threshold) · peak 21.5°C (+2.0°C)
+  - Feb 6 2018 – Feb 17 2018: **6 days** · avg 20.4°C (+0.9°C above threshold) · peak 21.6°C (+2.1°C)
+  - Jan 27 2019 – Feb 3 2019: **6 days** · avg 20.1°C (+0.6°C above threshold) · peak 20.8°C (+1.3°C)
+  - Feb 23 2019 – Mar 1 2019: **6 days** · avg 20.6°C (+1.1°C above threshold) · peak 21.2°C (+1.7°C)
+  - Dec 28 2019 – Jan 3 2020: **5 days** · avg 20.5°C (+1.0°C above threshold) · peak 21.0°C (+1.5°C)
+  - Jan 27 2020 – Feb 12 2020: **9 days** · avg 20.5°C (+1.0°C above threshold) · peak 21.8°C (+2.3°C)
+  - Feb 19 2023 – Feb 25 2023: **6 days** · avg 20.4°C (+0.9°C above threshold) · peak 21.0°C (+1.5°C)
+  - Jan 9 2025 – Jan 14 2025: **5 days** · avg 19.9°C (+0.4°C above threshold) · peak 20.6°C (+1.1°C)
+  - Jan 16 2025 – Feb 8 2025: **13 days** · avg 20.3°C (+0.8°C above threshold) · peak 22.4°C (+2.9°C)
 
-### SVG - NE:
-  - SST: 17.52°C  |  Trend: -0.0078°C/yr (p=0.8784)
-  - Heating DD/yr: 421.0  |  Cooling DD/yr: 86.4
-  - MARINE HEAT WAVES DETECTED: 5 events (40 total days) 90th percentile threshold: 22.34°C
-      - 2019-01-14 to 2019-02-07: 12 days, mean 23.64°C (+1.30°C), max 24.63°C (+2.29°C)
-      - 2019-02-25 to 2019-03-03: 5 days, mean 24.10°C (+1.76°C), max 24.88°C (+2.54°C)
-      - 2023-01-09 to 2023-01-17: 5 days, mean 23.06°C (+0.71°C), max 23.55°C (+1.21°C)
-      - 2025-01-10 to 2025-01-29: 9 days, mean 23.37°C (+1.03°C), max 24.12°C (+1.78°C)
-      - 2025-02-02 to 2025-02-18: 9 days, mean 23.26°C (+0.92°C), max 24.36°C (+2.02°C)
+### Ceduna E
 
-### SVG - SW:
-  - SST: 16.93°C  |  Trend: -0.0835°C/yr (p=0.0239)
-  - Heating DD/yr: 392.5  |  Cooling DD/yr: 84.6
-  - MARINE HEAT WAVES DETECTED: 4 events (71 total days) 90th percentile threshold: 20.92°C
-      - 2018-02-05 to 2018-03-16: 19 days, mean 21.42°C (+0.51°C), max 22.42°C (+1.51°C)
-      - 2019-01-22 to 2019-02-12: 13 days, mean 21.65°C (+0.73°C), max 22.13°C (+1.22°C)
-      - 2019-02-23 to 2019-03-03: 8 days, mean 22.18°C (+1.26°C), max 22.76°C (+1.84°C)
-      - 2025-01-10 to 2025-03-26: 31 days, mean 21.81°C (+0.89°C), max 23.20°C (+2.28°C)
+- **Average temperature:** 16.6°C (range 12.0–22.2°C)
+- **Cooling trend:** -0.097°C per year (±0.036°C) — statistically reliable
+- **Days warmer than normal per year:** 362 &nbsp; **Cooler than normal:** 27
 
-### SVG - SE:
-  - SST: 17.33°C  |  Trend: -0.0750°C/yr (p=0.0700)
-  - Heating DD/yr: 430.3  |  Cooling DD/yr: 78.8
-  - MARINE HEAT WAVES DETECTED: 5 events (62 total days) 90th percentile threshold: 21.54°C
-      - 2018-01-17 to 2018-01-25: 5 days, mean 22.41°C (+0.87°C), max 23.77°C (+2.24°C)
-      - 2018-02-05 to 2018-03-06: 15 days, mean 22.09°C (+0.55°C), max 23.66°C (+2.12°C)
-      - 2019-01-22 to 2019-02-12: 12 days, mean 22.35°C (+0.81°C), max 22.77°C (+1.24°C)
-      - 2019-02-23 to 2019-03-09: 10 days, mean 22.58°C (+1.04°C), max 24.04°C (+2.50°C)
-      - 2025-01-18 to 2025-02-22: 20 days, mean 22.49°C (+0.95°C), max 23.64°C (+2.10°C)
+**10 heat waves detected (71 days total)** — unusually warm threshold: above 18.8°C
 
-### KI - W:
-  - SST: 16.64°C  |  Trend: -0.0891°C/yr (p=0.0000)
-  - Heating DD/yr: 317.8  |  Cooling DD/yr: 19.9
-  - MARINE HEAT WAVES DETECTED: 8 events (78 total days) 90th percentile threshold: 19.18°C
-      - 2018-01-16 to 2018-01-25: 5 days, mean 20.12°C (+0.94°C), max 21.19°C (+2.01°C)
-      - 2018-02-06 to 2018-02-15: 5 days, mean 20.08°C (+0.90°C), max 21.13°C (+1.95°C)
-      - 2018-02-17 to 2018-03-03: 7 days, mean 19.70°C (+0.52°C), max 20.21°C (+1.04°C)
-      - 2019-01-14 to 2019-02-10: 16 days, mean 20.02°C (+0.84°C), max 21.23°C (+2.05°C)
-      - 2019-02-19 to 2019-03-02: 9 days, mean 20.08°C (+0.90°C), max 21.28°C (+2.11°C)
-      - 2022-01-26 to 2022-02-02: 6 days, mean 19.58°C (+0.40°C), max 20.04°C (+0.86°C)
-      - 2025-01-07 to 2025-02-17: 24 days, mean 20.15°C (+0.97°C), max 21.17°C (+1.99°C)
-      - 2025-03-24 to 2025-03-29: 6 days, mean 19.66°C (+0.48°C), max 20.20°C (+1.02°C)
+  - Jan 18 2018 – Jan 25 2018: **6 days** · avg 19.8°C (+0.9°C above threshold) · peak 20.8°C (+1.9°C)
+  - Feb 6 2018 – Feb 15 2018: **5 days** · avg 19.5°C (+0.7°C above threshold) · peak 21.3°C (+2.5°C)
+  - Apr 19 2018 – Apr 24 2018: **5 days** · avg 19.1°C (+0.3°C above threshold) · peak 19.4°C (+0.6°C)
+  - Jan 22 2019 – Feb 4 2019: **11 days** · avg 19.9°C (+1.0°C above threshold) · peak 21.5°C (+2.7°C)
+  - Feb 23 2019 – Mar 5 2019: **8 days** · avg 19.9°C (+1.0°C above threshold) · peak 20.8°C (+1.9°C)
+  - Feb 7 2020 – Feb 15 2020: **6 days** · avg 19.8°C (+1.0°C above threshold) · peak 21.1°C (+2.3°C)
+  - Feb 20 2023 – Feb 25 2023: **5 days** · avg 20.4°C (+1.6°C above threshold) · peak 21.8°C (+2.9°C)
+  - Jan 7 2025 – Jan 27 2025: **13 days** · avg 19.7°C (+0.9°C above threshold) · peak 20.8°C (+2.0°C)
+  - Feb 1 2025 – Feb 8 2025: **6 days** · avg 19.1°C (+0.3°C above threshold) · peak 19.6°C (+0.7°C)
+  - Feb 24 2025 – Mar 24 2025: **6 days** · avg 19.2°C (+0.4°C above threshold) · peak 19.7°C (+0.9°C)
 
-### KI - E:
-  - SST: 16.52°C  |  Trend: -0.0889°C/yr (p=0.0005)
-  - Heating DD/yr: 330.2  |  Cooling DD/yr: 53.7
-  - MARINE HEAT WAVES DETECTED: 8 events (96 total days) 90th percentile threshold: 19.67°C
-      - 2018-01-16 to 2018-01-25: 6 days, mean 20.79°C (+1.11°C), max 21.87°C (+2.19°C)
-      - 2018-02-06 to 2018-02-15: 5 days, mean 20.28°C (+0.61°C), max 20.58°C (+0.91°C)
-      - 2018-02-26 to 2018-03-06: 7 days, mean 20.12°C (+0.45°C), max 20.60°C (+0.93°C)
-      - 2019-01-14 to 2019-02-13: 19 days, mean 20.54°C (+0.87°C), max 21.99°C (+2.32°C)
-      - 2019-02-15 to 2019-03-07: 12 days, mean 20.45°C (+0.78°C), max 21.27°C (+1.60°C)
-      - 2019-03-17 to 2019-03-23: 5 days, mean 20.06°C (+0.39°C), max 20.40°C (+0.72°C)
-      - 2023-02-20 to 2023-02-26: 5 days, mean 20.31°C (+0.64°C), max 20.89°C (+1.21°C)
-      - 2025-01-05 to 2025-03-25: 37 days, mean 20.61°C (+0.93°C), max 21.84°C (+2.17°C)
+### Pt Lincoln W
 
-### Victor - W:
-  - SST: 16.20°C  |  Trend: -0.1045°C/yr (p=0.0001)
-  - Heating DD/yr: 272.8  |  Cooling DD/yr: 70.1
-  - MARINE HEAT WAVES DETECTED: 6 events (63 total days) 90th percentile threshold: 19.27°C
-      - 2018-01-16 to 2018-01-25: 5 days, mean 20.24°C (+0.97°C), max 21.84°C (+2.56°C)
-      - 2019-01-12 to 2019-02-13: 16 days, mean 20.01°C (+0.74°C), max 20.95°C (+1.67°C)
-      - 2019-02-24 to 2019-03-02: 6 days, mean 20.42°C (+1.15°C), max 21.03°C (+1.75°C)
-      - 2023-02-19 to 2023-02-26: 6 days, mean 20.15°C (+0.88°C), max 20.99°C (+1.72°C)
-      - 2024-12-10 to 2024-12-25: 7 days, mean 19.87°C (+0.60°C), max 20.83°C (+1.56°C)
-      - 2025-01-08 to 2025-02-22: 23 days, mean 20.34°C (+1.07°C), max 21.41°C (+2.13°C)
+- **Average temperature:** 16.3°C (range 11.5–20.8°C)
+- **Cooling trend:** -0.097°C per year (±0.033°C) — statistically reliable
+- **Days warmer than normal per year:** 285 &nbsp; **Cooler than normal:** 25
 
-### Victor - E:
-  - SST: 15.72°C  |  Trend: -0.0775°C/yr (p=0.0025)
-  - Heating DD/yr: 219.5  |  Cooling DD/yr: 100.6
-  - MARINE HEAT WAVES DETECTED: 8 events (77 total days) 90th percentile threshold: 18.61°C
-      - 2018-01-17 to 2018-01-25: 6 days, mean 19.83°C (+1.21°C), max 21.54°C (+2.93°C)
-      - 2018-02-06 to 2018-02-15: 7 days, mean 19.27°C (+0.66°C), max 20.15°C (+1.54°C)
-      - 2019-01-22 to 2019-02-11: 12 days, mean 19.20°C (+0.59°C), max 20.44°C (+1.83°C)
-      - 2019-02-24 to 2019-03-09: 9 days, mean 19.52°C (+0.91°C), max 20.48°C (+1.86°C)
-      - 2024-12-05 to 2024-12-20: 5 days, mean 19.53°C (+0.92°C), max 20.88°C (+2.27°C)
-      - 2024-12-28 to 2025-02-08: 24 days, mean 19.68°C (+1.07°C), max 21.10°C (+2.49°C)
-      - 2025-02-11 to 2025-02-22: 9 days, mean 19.46°C (+0.85°C), max 20.40°C (+1.78°C)
-      - 2025-02-24 to 2025-03-23: 5 days, mean 18.99°C (+0.38°C), max 19.52°C (+0.90°C)
+**8 heat waves detected (58 days total)** — unusually warm threshold: above 18.4°C
 
-### Lk Alex:
-  - SST: 16.54°C  |  Trend: -0.0058°C/yr (p=0.9257)
-  - Heating DD/yr: 205.1  |  Cooling DD/yr: 78.4
-  - MARINE HEAT WAVES DETECTED: 4 events (23 total days) 90th percentile threshold: 21.20°C
-      - 2019-01-14 to 2019-02-05: 8 days, mean 22.52°C (+1.32°C), max 23.78°C (+2.58°C)
-      - 2019-02-25 to 2019-03-03: 5 days, mean 23.38°C (+2.19°C), max 24.22°C (+3.03°C)
-      - 2019-12-24 to 2020-01-01: 5 days, mean 21.55°C (+0.35°C), max 22.20°C (+1.01°C)
-      - 2024-12-05 to 2024-12-20: 5 days, mean 22.05°C (+0.86°C), max 22.85°C (+1.65°C)
+  - Jan 16 2018 – Jan 21 2018: **5 days** · avg 19.6°C (+1.2°C above threshold) · peak 20.8°C (+2.4°C)
+  - Apr 8 2018 – Apr 14 2018: **5 days** · avg 18.8°C (+0.4°C above threshold) · peak 19.1°C (+0.6°C)
+  - Apr 17 2018 – Apr 24 2018: **7 days** · avg 18.8°C (+0.4°C above threshold) · peak 19.2°C (+0.8°C)
+  - Jan 19 2019 – Jan 29 2019: **7 days** · avg 19.2°C (+0.8°C above threshold) · peak 20.4°C (+2.0°C)
+  - Feb 23 2019 – Mar 2 2019: **6 days** · avg 19.4°C (+1.0°C above threshold) · peak 20.3°C (+1.9°C)
+  - Apr 1 2021 – Apr 8 2021: **6 days** · avg 18.8°C (+0.3°C above threshold) · peak 19.1°C (+0.7°C)
+  - Feb 15 2023 – Feb 26 2023: **9 days** · avg 19.2°C (+0.7°C above threshold) · peak 20.3°C (+1.9°C)
+  - Jan 12 2025 – Feb 2 2025: **13 days** · avg 19.2°C (+0.7°C above threshold) · peak 20.4°C (+1.9°C)
 
-### Victor Harbour-Mt Gambier:
-  - SST: 15.32°C  |  Trend: -0.0614°C/yr (p=0.0003)
-  - Heating DD/yr: 176.2  |  Cooling DD/yr: 109.5
-  - MARINE HEAT WAVES DETECTED: 7 events (71 total days) 90th percentile threshold: 17.48°C
-      - 2018-01-05 to 2018-01-25: 15 days, mean 18.35°C (+0.87°C), max 19.53°C (+2.05°C)
-      - 2019-01-29 to 2019-02-04: 6 days, mean 18.25°C (+0.76°C), max 19.10°C (+1.62°C)
-      - 2019-02-24 to 2019-03-06: 8 days, mean 18.38°C (+0.90°C), max 18.92°C (+1.44°C)
-      - 2021-03-31 to 2021-04-08: 7 days, mean 17.83°C (+0.35°C), max 18.09°C (+0.61°C)
-      - 2022-01-25 to 2022-01-29: 5 days, mean 19.13°C (+1.65°C), max 19.86°C (+2.38°C)
-      - 2023-02-19 to 2023-02-24: 5 days, mean 17.78°C (+0.29°C), max 18.49°C (+1.01°C)
-      - 2025-01-01 to 2025-02-14: 25 days, mean 18.40°C (+0.92°C), max 20.24°C (+2.76°C)
+### Pt Lincoln E
 
-### Mt Gambier:
-  - SST: 15.32°C  |  Trend: -0.0389°C/yr (p=0.0384)
-  - Heating DD/yr: 169.1  |  Cooling DD/yr: 106.4
-  - MARINE HEAT WAVES DETECTED: 8 events (93 total days) 90th percentile threshold: 17.64°C
-      - 2018-01-05 to 2018-02-17: 20 days, mean 18.53°C (+0.89°C), max 20.16°C (+2.52°C)
-      - 2018-03-06 to 2018-03-15: 6 days, mean 18.10°C (+0.46°C), max 18.77°C (+1.13°C)
-      - 2019-01-10 to 2019-02-19: 21 days, mean 18.38°C (+0.74°C), max 19.09°C (+1.45°C)
-      - 2019-02-24 to 2019-03-07: 8 days, mean 18.62°C (+0.98°C), max 19.69°C (+2.05°C)
-      - 2024-02-01 to 2024-02-14: 12 days, mean 18.14°C (+0.50°C), max 18.90°C (+1.26°C)
-      - 2024-03-01 to 2024-03-11: 6 days, mean 18.08°C (+0.44°C), max 18.33°C (+0.69°C)
-      - 2025-01-11 to 2025-02-12: 13 days, mean 18.58°C (+0.94°C), max 19.81°C (+2.17°C)
-      - 2025-03-01 to 2025-03-29: 7 days, mean 17.88°C (+0.24°C), max 18.09°C (+0.45°C)
+- **Average temperature:** 16.8°C (range 12.0–23.4°C)
+- **Cooling trend:** -0.085°C per year (±0.050°C) — statistically reliable
+- **Days warmer than normal per year:** 386 &nbsp; **Cooler than normal:** 46
 
-### Pt Fairy:
-  - SST: 15.46°C  |  Trend: -0.0443°C/yr (p=0.0956)
-  - Heating DD/yr: 253.9  |  Cooling DD/yr: 161.5
-  - MARINE HEAT WAVES DETECTED: 8 events (71 total days) 90th percentile threshold: 18.81°C
-      - 2018-01-06 to 2018-01-11: 5 days, mean 19.11°C (+0.29°C), max 19.32°C (+0.51°C)
-      - 2018-01-26 to 2018-03-02: 20 days, mean 20.22°C (+1.40°C), max 25.06°C (+6.24°C)
-      - 2019-01-10 to 2019-01-16: 5 days, mean 19.57°C (+0.75°C), max 20.71°C (+1.89°C)
-      - 2019-01-20 to 2019-02-14: 15 days, mean 19.92°C (+1.10°C), max 20.81°C (+1.99°C)
-      - 2022-01-23 to 2022-01-29: 5 days, mean 19.68°C (+0.87°C), max 21.27°C (+2.46°C)
-      - 2024-02-08 to 2024-02-25: 10 days, mean 19.49°C (+0.68°C), max 20.94°C (+2.12°C)
-      - 2025-01-31 to 2025-02-07: 5 days, mean 19.75°C (+0.94°C), max 20.63°C (+1.82°C)
-      - 2025-02-11 to 2025-02-16: 6 days, mean 19.87°C (+1.05°C), max 22.17°C (+3.35°C)
+**7 heat waves detected (56 days total)** — unusually warm threshold: above 20.0°C
+
+  - Feb 5 2018 – Mar 10 2018: **16 days** · avg 20.8°C (+0.9°C above threshold) · peak 22.5°C (+2.6°C)
+  - Apr 7 2018 – Apr 12 2018: **5 days** · avg 20.3°C (+0.4°C above threshold) · peak 20.7°C (+0.7°C)
+  - Jan 22 2019 – Feb 4 2019: **11 days** · avg 20.9°C (+0.9°C above threshold) · peak 22.1°C (+2.1°C)
+  - Feb 20 2019 – Mar 3 2019: **8 days** · avg 21.3°C (+1.4°C above threshold) · peak 23.4°C (+3.5°C)
+  - Feb 7 2020 – Feb 18 2020: **5 days** · avg 20.4°C (+0.4°C above threshold) · peak 21.0°C (+1.0°C)
+  - Feb 11 2025 – Feb 18 2025: **5 days** · avg 21.6°C (+1.6°C above threshold) · peak 22.9°C (+2.9°C)
+  - Feb 22 2025 – Mar 23 2025: **6 days** · avg 21.0°C (+1.0°C above threshold) · peak 22.9°C (+2.9°C)
+
+### Spencer Gulf N
+
+- **Average temperature:** 17.7°C (range 10.3–25.6°C)
+- **Cooling trend:** -0.012°C per year (±0.078°C) — not statistically reliable
+- **Days warmer than normal per year:** 699 &nbsp; **Cooler than normal:** 114
+
+**12 heat waves detected (90 days total)** — unusually warm threshold: above 22.6°C
+
+  - Jan 19 2018 – Jan 26 2018: **5 days** · avg 24.0°C (+1.4°C above threshold) · peak 24.6°C (+2.0°C)
+  - Feb 5 2018 – Feb 28 2018: **11 days** · avg 23.3°C (+0.7°C above threshold) · peak 25.6°C (+3.0°C)
+  - Jan 14 2019 – Jan 30 2019: **7 days** · avg 23.6°C (+1.0°C above threshold) · peak 24.5°C (+1.9°C)
+  - Feb 2 2019 – Feb 9 2019: **6 days** · avg 23.6°C (+1.0°C above threshold) · peak 24.3°C (+1.7°C)
+  - Feb 24 2019 – Mar 3 2019: **7 days** · avg 23.9°C (+1.2°C above threshold) · peak 24.8°C (+2.2°C)
+  - Jan 26 2022 – Feb 2 2022: **6 days** · avg 23.7°C (+1.1°C above threshold) · peak 24.3°C (+1.7°C)
+  - Jan 12 2023 – Jan 20 2023: **6 days** · avg 23.1°C (+0.5°C above threshold) · peak 24.1°C (+1.4°C)
+  - Feb 20 2023 – Feb 26 2023: **5 days** · avg 23.8°C (+1.2°C above threshold) · peak 24.7°C (+2.1°C)
+  - Jan 12 2024 – Jan 25 2024: **6 days** · avg 23.3°C (+0.7°C above threshold) · peak 25.2°C (+2.6°C)
+  - Feb 18 2024 – Mar 3 2024: **10 days** · avg 23.4°C (+0.8°C above threshold) · peak 24.0°C (+1.3°C)
+  - Jan 10 2025 – Jan 29 2025: **13 days** · avg 23.6°C (+1.0°C above threshold) · peak 24.2°C (+1.6°C)
+  - Feb 6 2025 – Feb 19 2025: **8 days** · avg 23.7°C (+1.1°C above threshold) · peak 24.8°C (+2.1°C)
+
+### Spencer Gulf C
+
+- **Average temperature:** 17.3°C (range 11.3–23.8°C)
+- **Cooling trend:** -0.049°C per year (±0.067°C) — not statistically reliable
+- **Days warmer than normal per year:** 519 &nbsp; **Cooler than normal:** 83
+
+**9 heat waves detected (86 days total)** — unusually warm threshold: above 21.4°C
+
+  - Jan 19 2018 – Jan 25 2018: **5 days** · avg 22.2°C (+0.9°C above threshold) · peak 23.2°C (+1.8°C)
+  - Feb 5 2018 – Feb 28 2018: **10 days** · avg 22.0°C (+0.6°C above threshold) · peak 22.3°C (+1.0°C)
+  - Mar 4 2018 – Mar 10 2018: **5 days** · avg 21.7°C (+0.3°C above threshold) · peak 22.0°C (+0.7°C)
+  - Jan 22 2019 – Feb 12 2019: **15 days** · avg 22.1°C (+0.7°C above threshold) · peak 23.1°C (+1.7°C)
+  - Feb 20 2019 – Mar 13 2019: **13 days** · avg 22.2°C (+0.8°C above threshold) · peak 23.3°C (+1.9°C)
+  - Feb 20 2023 – Feb 26 2023: **5 days** · avg 22.2°C (+0.9°C above threshold) · peak 22.9°C (+1.6°C)
+  - Feb 8 2024 – Feb 13 2024: **5 days** · avg 21.9°C (+0.5°C above threshold) · peak 22.3°C (+1.0°C)
+  - Jan 16 2025 – Feb 3 2025: **12 days** · avg 22.4°C (+1.0°C above threshold) · peak 23.1°C (+1.8°C)
+  - Feb 6 2025 – Mar 2 2025: **16 days** · avg 22.3°C (+1.0°C above threshold) · peak 23.8°C (+2.5°C)
+
+### Spencer Gulf S
+
+- **Average temperature:** 16.9°C (range 11.3–23.2°C)
+- **Cooling trend:** -0.075°C per year (±0.055°C) — statistically reliable
+- **Days warmer than normal per year:** 420 &nbsp; **Cooler than normal:** 63
+
+**7 heat waves detected (74 days total)** — unusually warm threshold: above 20.3°C
+
+  - Jan 19 2018 – Jan 25 2018: **5 days** · avg 21.3°C (+0.9°C above threshold) · peak 22.3°C (+1.9°C)
+  - Feb 5 2018 – Feb 15 2018: **6 days** · avg 21.1°C (+0.7°C above threshold) · peak 21.8°C (+1.5°C)
+  - Feb 17 2018 – Mar 6 2018: **10 days** · avg 20.8°C (+0.5°C above threshold) · peak 21.5°C (+1.2°C)
+  - Jan 22 2019 – Feb 10 2019: **13 days** · avg 21.2°C (+0.9°C above threshold) · peak 22.2°C (+1.9°C)
+  - Feb 21 2019 – Mar 7 2019: **11 days** · avg 21.4°C (+1.1°C above threshold) · peak 22.4°C (+2.1°C)
+  - Jan 18 2025 – Feb 19 2025: **23 days** · avg 21.5°C (+1.2°C above threshold) · peak 22.7°C (+2.4°C)
+  - Feb 24 2025 – Mar 24 2025: **6 days** · avg 20.9°C (+0.6°C above threshold) · peak 21.5°C (+1.2°C)
+
+### SVG - NW
+
+- **Average temperature:** 17.4°C (range 10.8–26.6°C)
+- **Cooling trend:** -0.057°C per year (±0.094°C) — not statistically reliable
+- **Days warmer than normal per year:** 418 &nbsp; **Cooler than normal:** 91
+
+**8 heat waves detected (62 days total)** — unusually warm threshold: above 22.1°C
+
+  - Feb 5 2018 – Mar 6 2018: **7 days** · avg 22.7°C (+0.6°C above threshold) · peak 24.5°C (+2.4°C)
+  - Jan 12 2019 – Feb 10 2019: **16 days** · avg 23.4°C (+1.3°C above threshold) · peak 26.6°C (+4.5°C)
+  - Feb 24 2019 – Mar 3 2019: **7 days** · avg 23.5°C (+1.4°C above threshold) · peak 24.3°C (+2.2°C)
+  - Dec 29 2019 – Jan 14 2020: **6 days** · avg 22.8°C (+0.7°C above threshold) · peak 23.9°C (+1.8°C)
+  - Jan 9 2023 – Jan 17 2023: **5 days** · avg 22.6°C (+0.5°C above threshold) · peak 23.0°C (+0.9°C)
+  - Feb 18 2024 – Feb 27 2024: **5 days** · avg 22.7°C (+0.6°C above threshold) · peak 23.5°C (+1.4°C)
+  - Jan 10 2025 – Jan 27 2025: **9 days** · avg 23.3°C (+1.2°C above threshold) · peak 24.0°C (+2.0°C)
+  - Feb 2 2025 – Feb 12 2025: **7 days** · avg 23.3°C (+1.2°C above threshold) · peak 24.0°C (+1.9°C)
+
+### SVG - NE
+
+- **Average temperature:** 17.5°C (range 11.1–24.9°C)
+- **Cooling trend:** -0.008°C per year (±0.100°C) — not statistically reliable
+- **Days warmer than normal per year:** 421 &nbsp; **Cooler than normal:** 86
+
+**5 heat waves detected (40 days total)** — unusually warm threshold: above 22.3°C
+
+  - Jan 14 2019 – Feb 7 2019: **12 days** · avg 23.6°C (+1.3°C above threshold) · peak 24.6°C (+2.3°C)
+  - Feb 25 2019 – Mar 3 2019: **5 days** · avg 24.1°C (+1.8°C above threshold) · peak 24.9°C (+2.5°C)
+  - Jan 9 2023 – Jan 17 2023: **5 days** · avg 23.1°C (+0.7°C above threshold) · peak 23.6°C (+1.2°C)
+  - Jan 10 2025 – Jan 29 2025: **9 days** · avg 23.4°C (+1.0°C above threshold) · peak 24.1°C (+1.8°C)
+  - Feb 2 2025 – Feb 18 2025: **9 days** · avg 23.3°C (+0.9°C above threshold) · peak 24.4°C (+2.0°C)
+
+### SVG - SW
+
+- **Average temperature:** 16.9°C (range 10.6–23.2°C)
+- **Cooling trend:** -0.083°C per year (±0.072°C) — statistically reliable
+- **Days warmer than normal per year:** 392 &nbsp; **Cooler than normal:** 85
+
+**4 heat waves detected (71 days total)** — unusually warm threshold: above 20.9°C
+
+  - Feb 5 2018 – Mar 16 2018: **19 days** · avg 21.4°C (+0.5°C above threshold) · peak 22.4°C (+1.5°C)
+  - Jan 22 2019 – Feb 12 2019: **13 days** · avg 21.6°C (+0.7°C above threshold) · peak 22.1°C (+1.2°C)
+  - Feb 23 2019 – Mar 3 2019: **8 days** · avg 22.2°C (+1.3°C above threshold) · peak 22.8°C (+1.8°C)
+  - Jan 10 2025 – Mar 26 2025: **31 days** · avg 21.8°C (+0.9°C above threshold) · peak 23.2°C (+2.3°C)
+
+### SVG - SE
+
+- **Average temperature:** 17.3°C (range 11.2–24.0°C)
+- **Cooling trend:** -0.075°C per year (±0.081°C) — not statistically reliable
+- **Days warmer than normal per year:** 430 &nbsp; **Cooler than normal:** 79
+
+**5 heat waves detected (62 days total)** — unusually warm threshold: above 21.5°C
+
+  - Jan 17 2018 – Jan 25 2018: **5 days** · avg 22.4°C (+0.9°C above threshold) · peak 23.8°C (+2.2°C)
+  - Feb 5 2018 – Mar 6 2018: **15 days** · avg 22.1°C (+0.6°C above threshold) · peak 23.7°C (+2.1°C)
+  - Jan 22 2019 – Feb 12 2019: **12 days** · avg 22.3°C (+0.8°C above threshold) · peak 22.8°C (+1.2°C)
+  - Feb 23 2019 – Mar 9 2019: **10 days** · avg 22.6°C (+1.0°C above threshold) · peak 24.0°C (+2.5°C)
+  - Jan 18 2025 – Feb 22 2025: **20 days** · avg 22.5°C (+1.0°C above threshold) · peak 23.6°C (+2.1°C)
+
+### KI - W
+
+- **Average temperature:** 16.6°C (range 13.0–21.5°C)
+- **Cooling trend:** -0.089°C per year (±0.040°C) — statistically reliable
+- **Days warmer than normal per year:** 318 &nbsp; **Cooler than normal:** 20
+
+**8 heat waves detected (78 days total)** — unusually warm threshold: above 19.2°C
+
+  - Jan 16 2018 – Jan 25 2018: **5 days** · avg 20.1°C (+0.9°C above threshold) · peak 21.2°C (+2.0°C)
+  - Feb 6 2018 – Feb 15 2018: **5 days** · avg 20.1°C (+0.9°C above threshold) · peak 21.1°C (+2.0°C)
+  - Feb 17 2018 – Mar 3 2018: **7 days** · avg 19.7°C (+0.5°C above threshold) · peak 20.2°C (+1.0°C)
+  - Jan 14 2019 – Feb 10 2019: **16 days** · avg 20.0°C (+0.8°C above threshold) · peak 21.2°C (+2.0°C)
+  - Feb 19 2019 – Mar 2 2019: **9 days** · avg 20.1°C (+0.9°C above threshold) · peak 21.3°C (+2.1°C)
+  - Jan 26 2022 – Feb 2 2022: **6 days** · avg 19.6°C (+0.4°C above threshold) · peak 20.0°C (+0.9°C)
+  - Jan 7 2025 – Feb 17 2025: **24 days** · avg 20.1°C (+1.0°C above threshold) · peak 21.2°C (+2.0°C)
+  - Mar 24 2025 – Mar 29 2025: **6 days** · avg 19.7°C (+0.5°C above threshold) · peak 20.2°C (+1.0°C)
+
+### KI - E
+
+- **Average temperature:** 16.5°C (range 11.4–22.0°C)
+- **Cooling trend:** -0.089°C per year (±0.050°C) — statistically reliable
+- **Days warmer than normal per year:** 330 &nbsp; **Cooler than normal:** 54
+
+**8 heat waves detected (96 days total)** — unusually warm threshold: above 19.7°C
+
+  - Jan 16 2018 – Jan 25 2018: **6 days** · avg 20.8°C (+1.1°C above threshold) · peak 21.9°C (+2.2°C)
+  - Feb 6 2018 – Feb 15 2018: **5 days** · avg 20.3°C (+0.6°C above threshold) · peak 20.6°C (+0.9°C)
+  - Feb 26 2018 – Mar 6 2018: **7 days** · avg 20.1°C (+0.5°C above threshold) · peak 20.6°C (+0.9°C)
+  - Jan 14 2019 – Feb 13 2019: **19 days** · avg 20.5°C (+0.9°C above threshold) · peak 22.0°C (+2.3°C)
+  - Feb 15 2019 – Mar 7 2019: **12 days** · avg 20.4°C (+0.8°C above threshold) · peak 21.3°C (+1.6°C)
+  - Mar 17 2019 – Mar 23 2019: **5 days** · avg 20.1°C (+0.4°C above threshold) · peak 20.4°C (+0.7°C)
+  - Feb 20 2023 – Feb 26 2023: **5 days** · avg 20.3°C (+0.6°C above threshold) · peak 20.9°C (+1.2°C)
+  - Jan 5 2025 – Mar 25 2025: **37 days** · avg 20.6°C (+0.9°C above threshold) · peak 21.8°C (+2.2°C)
+
+### Victor - W
+
+- **Average temperature:** 16.2°C (range 11.4–21.8°C)
+- **Cooling trend:** -0.104°C per year (±0.052°C) — statistically reliable
+- **Days warmer than normal per year:** 273 &nbsp; **Cooler than normal:** 70
+
+**6 heat waves detected (63 days total)** — unusually warm threshold: above 19.3°C
+
+  - Jan 16 2018 – Jan 25 2018: **5 days** · avg 20.2°C (+1.0°C above threshold) · peak 21.8°C (+2.6°C)
+  - Jan 12 2019 – Feb 13 2019: **16 days** · avg 20.0°C (+0.7°C above threshold) · peak 20.9°C (+1.7°C)
+  - Feb 24 2019 – Mar 2 2019: **6 days** · avg 20.4°C (+1.2°C above threshold) · peak 21.0°C (+1.8°C)
+  - Feb 19 2023 – Feb 26 2023: **6 days** · avg 20.1°C (+0.9°C above threshold) · peak 21.0°C (+1.7°C)
+  - Dec 10 2024 – Dec 25 2024: **7 days** · avg 19.9°C (+0.6°C above threshold) · peak 20.8°C (+1.6°C)
+  - Jan 8 2025 – Feb 22 2025: **23 days** · avg 20.3°C (+1.1°C above threshold) · peak 21.4°C (+2.1°C)
+
+### Victor - E
+
+- **Average temperature:** 15.7°C (range 11.1–21.5°C)
+- **Cooling trend:** -0.078°C per year (±0.050°C) — statistically reliable
+- **Days warmer than normal per year:** 220 &nbsp; **Cooler than normal:** 101
+
+**8 heat waves detected (77 days total)** — unusually warm threshold: above 18.6°C
+
+  - Jan 17 2018 – Jan 25 2018: **6 days** · avg 19.8°C (+1.2°C above threshold) · peak 21.5°C (+2.9°C)
+  - Feb 6 2018 – Feb 15 2018: **7 days** · avg 19.3°C (+0.7°C above threshold) · peak 20.1°C (+1.5°C)
+  - Jan 22 2019 – Feb 11 2019: **12 days** · avg 19.2°C (+0.6°C above threshold) · peak 20.4°C (+1.8°C)
+  - Feb 24 2019 – Mar 9 2019: **9 days** · avg 19.5°C (+0.9°C above threshold) · peak 20.5°C (+1.9°C)
+  - Dec 5 2024 – Dec 20 2024: **5 days** · avg 19.5°C (+0.9°C above threshold) · peak 20.9°C (+2.3°C)
+  - Dec 28 2024 – Feb 8 2025: **24 days** · avg 19.7°C (+1.1°C above threshold) · peak 21.1°C (+2.5°C)
+  - Feb 11 2025 – Feb 22 2025: **9 days** · avg 19.5°C (+0.9°C above threshold) · peak 20.4°C (+1.8°C)
+  - Feb 24 2025 – Mar 23 2025: **5 days** · avg 19.0°C (+0.4°C above threshold) · peak 19.5°C (+0.9°C)
+
+### Lk Alex
+
+- **Average temperature:** 16.5°C (range 9.9–24.7°C)
+- **Cooling trend:** -0.006°C per year (±0.123°C) — not statistically reliable
+- **Days warmer than normal per year:** 205 &nbsp; **Cooler than normal:** 78
+
+**4 heat waves detected (23 days total)** — unusually warm threshold: above 21.2°C
+
+  - Jan 14 2019 – Feb 5 2019: **8 days** · avg 22.5°C (+1.3°C above threshold) · peak 23.8°C (+2.6°C)
+  - Feb 25 2019 – Mar 3 2019: **5 days** · avg 23.4°C (+2.2°C above threshold) · peak 24.2°C (+3.0°C)
+  - Dec 24 2019 – Jan 1 2020: **5 days** · avg 21.5°C (+0.4°C above threshold) · peak 22.2°C (+1.0°C)
+  - Dec 5 2024 – Dec 20 2024: **5 days** · avg 22.1°C (+0.9°C above threshold) · peak 22.8°C (+1.7°C)
+
+### Victor Harbour-Mt Gambier
+
+- **Average temperature:** 15.3°C (range 10.7–20.2°C)
+- **Cooling trend:** -0.061°C per year (±0.033°C) — statistically reliable
+- **Days warmer than normal per year:** 176 &nbsp; **Cooler than normal:** 110
+
+**7 heat waves detected (71 days total)** — unusually warm threshold: above 17.5°C
+
+  - Jan 5 2018 – Jan 25 2018: **15 days** · avg 18.4°C (+0.9°C above threshold) · peak 19.5°C (+2.0°C)
+  - Jan 29 2019 – Feb 4 2019: **6 days** · avg 18.2°C (+0.8°C above threshold) · peak 19.1°C (+1.6°C)
+  - Feb 24 2019 – Mar 6 2019: **8 days** · avg 18.4°C (+0.9°C above threshold) · peak 18.9°C (+1.4°C)
+  - Mar 31 2021 – Apr 8 2021: **7 days** · avg 17.8°C (+0.4°C above threshold) · peak 18.1°C (+0.6°C)
+  - Jan 25 2022 – Jan 29 2022: **5 days** · avg 19.1°C (+1.7°C above threshold) · peak 19.9°C (+2.4°C)
+  - Feb 19 2023 – Feb 24 2023: **5 days** · avg 17.8°C (+0.3°C above threshold) · peak 18.5°C (+1.0°C)
+  - Jan 1 2025 – Feb 14 2025: **25 days** · avg 18.4°C (+0.9°C above threshold) · peak 20.2°C (+2.8°C)
+
+### Mt Gambier
+
+- **Average temperature:** 15.3°C (range 11.6–20.2°C)
+- **Cooling trend:** -0.039°C per year (±0.037°C) — statistically reliable
+- **Days warmer than normal per year:** 169 &nbsp; **Cooler than normal:** 106
+
+**8 heat waves detected (93 days total)** — unusually warm threshold: above 17.6°C
+
+  - Jan 5 2018 – Feb 17 2018: **20 days** · avg 18.5°C (+0.9°C above threshold) · peak 20.2°C (+2.5°C)
+  - Mar 6 2018 – Mar 15 2018: **6 days** · avg 18.1°C (+0.5°C above threshold) · peak 18.8°C (+1.1°C)
+  - Jan 10 2019 – Feb 19 2019: **21 days** · avg 18.4°C (+0.7°C above threshold) · peak 19.1°C (+1.4°C)
+  - Feb 24 2019 – Mar 7 2019: **8 days** · avg 18.6°C (+1.0°C above threshold) · peak 19.7°C (+2.1°C)
+  - Feb 1 2024 – Feb 14 2024: **12 days** · avg 18.1°C (+0.5°C above threshold) · peak 18.9°C (+1.3°C)
+  - Mar 1 2024 – Mar 11 2024: **6 days** · avg 18.1°C (+0.4°C above threshold) · peak 18.3°C (+0.7°C)
+  - Jan 11 2025 – Feb 12 2025: **13 days** · avg 18.6°C (+0.9°C above threshold) · peak 19.8°C (+2.2°C)
+  - Mar 1 2025 – Mar 29 2025: **7 days** · avg 17.9°C (+0.2°C above threshold) · peak 18.1°C (+0.4°C)
+
+### Pt Fairy
+
+- **Average temperature:** 15.5°C (range 9.4–25.1°C)
+- **Cooling trend:** -0.044°C per year (±0.052°C) — not statistically reliable
+- **Days warmer than normal per year:** 254 &nbsp; **Cooler than normal:** 162
+
+**8 heat waves detected (71 days total)** — unusually warm threshold: above 18.8°C
+
+  - Jan 6 2018 – Jan 11 2018: **5 days** · avg 19.1°C (+0.3°C above threshold) · peak 19.3°C (+0.5°C)
+  - Jan 26 2018 – Mar 2 2018: **20 days** · avg 20.2°C (+1.4°C above threshold) · peak 25.1°C (+6.2°C)
+  - Jan 10 2019 – Jan 16 2019: **5 days** · avg 19.6°C (+0.8°C above threshold) · peak 20.7°C (+1.9°C)
+  - Jan 20 2019 – Feb 14 2019: **15 days** · avg 19.9°C (+1.1°C above threshold) · peak 20.8°C (+2.0°C)
+  - Jan 23 2022 – Jan 29 2022: **5 days** · avg 19.7°C (+0.9°C above threshold) · peak 21.3°C (+2.5°C)
+  - Feb 8 2024 – Feb 25 2024: **10 days** · avg 19.5°C (+0.7°C above threshold) · peak 20.9°C (+2.1°C)
+  - Jan 31 2025 – Feb 7 2025: **5 days** · avg 19.8°C (+0.9°C above threshold) · peak 20.6°C (+1.8°C)
+  - Feb 11 2025 – Feb 16 2025: **6 days** · avg 19.9°C (+1.1°C above threshold) · peak 22.2°C (+3.4°C)
 
 ---
 
@@ -299,8 +380,8 @@
 | 2025Q2     | 0.586443 |   0.91306  |   0.768801 |       0.590395 |       0.810694 |          2.18309 |         0.84232  |         1.24034  |    4.36114 |    4.38811 |   2.59219  |   1.40029  | 0.656925 | 1.32357  |     0.91589  |     0.962905 |   21.0486 |                    0.566423 |     0.367223 |   0.921352 |
 | 2025Q3     | 0.343732 |   0.637652 |   0.699562 |       0.476294 |       0.757779 |          2.77171 |         0.651085 |         0.589823 |   13.2696  |   11.8667  |   2.27952  |   3.32532  | 0.319275 | 0.649195 |     0.56203  |     0.614875 |  nan      |                    0.419024 |     0.343666 |   0.627906 |
 | 2025Q4     | 0.285594 |   0.519815 |   0.431246 |       0.288273 |       0.339615 |          2.32145 |         0.527534 |         0.489277 |    4.52746 |    5.29383 |   0.957656 |   1.26867  | 0.231938 | 0.488529 |     0.378762 |     0.442039 |  nan      |                    0.341309 |     0.28596  |   0.433947 |
-| 2026Q1     | 0.367615 |   0.768359 |   0.698767 |       0.661008 |       0.632367 |          2.56882 |         0.609019 |         0.903001 |    2.4988  |    3.03735 |   0.762023 |   0.677932 | 0.435135 | 0.653237 |     0.44506  |     0.374268 |  nan      |                    0.46914  |     0.258508 |   0.461609 |
-| Grand Mean | 0.414969 |   0.77942  |   0.75259  |       0.540277 |       0.534577 |          2.09429 |         0.577177 |         0.61876  |    2.75722 |    4.0269  |   0.834469 |   0.81829  | 0.33528  | 0.616569 |     0.526272 |     0.627531 |   22.101  |                    0.503517 |     0.323175 |   0.690753 |
+| 2026Q1     | 0.408616 |   0.759452 |   0.72764  |       0.764275 |       0.681055 |          2.31307 |         0.700347 |         0.97185  |    2.54059 |    3.13046 |   0.768091 |   0.70799  | 0.465202 | 0.650165 |     0.378682 |     0.43569  |  nan      |                    0.595994 |     0.285268 |   0.494263 |
+| Grand Mean | 0.417285 |   0.778942 |   0.754196 |       0.54442  |       0.536668 |          2.08277 |         0.581437 |         0.621158 |    2.75962 |    4.0333  |   0.834817 |   0.820161 | 0.336461 | 0.616417 |     0.521817 |     0.63257  |   22.101  |                    0.509899 |     0.324855 |   0.693243 |
 ```
 
 ## VIIRS Pixel Coverage Summary
@@ -396,4 +477,4 @@ Algae need nutrients (primarily nitrogen and phosphorus) to grow. Excessive nutr
 - Or just drive down Point Sturt road and see for yourself :)
 
 ---
-Last updated: Sun 15 Mar 2026 08:19:18 ACDT
+Last updated: Wed 15 Apr 2026 14:15:04 ACST
