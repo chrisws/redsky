@@ -46,112 +46,145 @@ Ceduna {'lat_km': 89.05600000000047, 'lon_km': 141.14182091138554, 'area_km2': 1
 
 
 ---
-## Ocean thermal energy analysis
-- Mixed layer depth: 10.0m
-- Grid cell area: 0.5625 km²
-- Baseline temperature: 15.0°C
+## Ocean temperature analysis
 
-### Esperance_1:
-  - SST: 17.96°C  |  Trend: -0.0573°C/yr (p=0.0004)
-  - Heating DD/yr: 539.5  |  Cooling DD/yr: 0.0
-  - MARINE HEAT WAVES DETECTED: 8 events (73 total days) 90th percentile threshold: 19.88°C
-      - 2018-02-12 to 2018-02-28: 6 days, mean 20.35°C (+0.47°C), max 20.74°C (+0.86°C)
-      - 2018-03-02 to 2018-03-08: 5 days, mean 20.33°C (+0.45°C), max 20.84°C (+0.96°C)
-      - 2019-02-07 to 2019-02-27: 10 days, mean 20.28°C (+0.40°C), max 20.52°C (+0.64°C)
-      - 2019-03-03 to 2019-03-21: 7 days, mean 20.37°C (+0.49°C), max 20.74°C (+0.86°C)
-      - 2020-01-28 to 2020-02-08: 5 days, mean 20.50°C (+0.62°C), max 21.27°C (+1.39°C)
-      - 2021-03-31 to 2021-04-15: 6 days, mean 20.34°C (+0.46°C), max 20.73°C (+0.85°C)
-      - 2025-01-13 to 2025-02-21: 19 days, mean 20.50°C (+0.62°C), max 21.10°C (+1.22°C)
-      - 2025-02-25 to 2025-04-21: 15 days, mean 20.44°C (+0.56°C), max 20.87°C (+0.99°C)
+- Water depth measured: 10.0 m
+- Sampling area per cell: 0.5625 km²
+- Reference temperature: 15.0°C
 
-### Esperance_2:
-  - SST: 17.73°C  |  Trend: -0.0653°C/yr (p=0.0007)
-  - Heating DD/yr: 524.0  |  Cooling DD/yr: 0.7
-  - MARINE HEAT WAVES DETECTED: 6 events (50 total days) 90th percentile threshold: 20.17°C
-      - 2018-02-06 to 2018-02-19: 9 days, mean 20.97°C (+0.80°C), max 21.82°C (+1.64°C)
-      - 2018-03-02 to 2018-03-10: 6 days, mean 20.59°C (+0.42°C), max 21.05°C (+0.88°C)
-      - 2018-03-18 to 2018-03-27: 5 days, mean 20.77°C (+0.60°C), max 21.36°C (+1.19°C)
-      - 2019-02-21 to 2019-03-16: 12 days, mean 20.74°C (+0.57°C), max 21.52°C (+1.35°C)
-      - 2025-01-29 to 2025-02-15: 10 days, mean 20.80°C (+0.63°C), max 21.67°C (+1.50°C)
-      - 2025-03-02 to 2025-03-29: 8 days, mean 20.84°C (+0.67°C), max 21.26°C (+1.08°C)
+### Esperance_1
 
-### Esperance_3:
-  - SST: 17.74°C  |  Trend: -0.0673°C/yr (p=0.0021)
-  - Heating DD/yr: 537.8  |  Cooling DD/yr: 1.4
-  - MARINE HEAT WAVES DETECTED: 9 events (73 total days) 90th percentile threshold: 20.58°C
-      - 2018-02-13 to 2018-02-18: 5 days, mean 21.11°C (+0.53°C), max 21.49°C (+0.90°C)
-      - 2018-03-07 to 2018-03-27: 7 days, mean 21.04°C (+0.45°C), max 21.37°C (+0.78°C)
-      - 2018-04-04 to 2018-04-12: 6 days, mean 21.04°C (+0.46°C), max 21.33°C (+0.75°C)
-      - 2019-02-07 to 2019-02-17: 5 days, mean 21.04°C (+0.45°C), max 21.64°C (+1.05°C)
-      - 2019-02-21 to 2019-03-20: 12 days, mean 21.29°C (+0.70°C), max 21.75°C (+1.17°C)
-      - 2019-04-07 to 2019-04-13: 5 days, mean 20.87°C (+0.28°C), max 21.06°C (+0.47°C)
-      - 2020-02-04 to 2020-02-15: 7 days, mean 20.95°C (+0.36°C), max 21.39°C (+0.80°C)
-      - 2025-01-21 to 2025-02-22: 14 days, mean 21.64°C (+1.06°C), max 22.46°C (+1.88°C)
-      - 2025-02-25 to 2025-04-11: 12 days, mean 21.22°C (+0.64°C), max 21.69°C (+1.11°C)
+- **Average temperature:** 18.0°C (range 14.9–21.3°C)
+- **Cooling trend:** -0.057°C per year (±0.032°C) — statistically reliable
+- **Days warmer than normal per year:** 539 &nbsp; **Cooler than normal:** 0
 
-### Mundrabilla:
-  - SST: 17.78°C  |  Trend: -0.0656°C/yr (p=0.0073)
-  - Heating DD/yr: 535.8  |  Cooling DD/yr: 3.9
-  - MARINE HEAT WAVES DETECTED: 6 events (68 total days) 90th percentile threshold: 20.82°C
-      - 2018-02-13 to 2018-02-28: 6 days, mean 21.21°C (+0.38°C), max 21.45°C (+0.63°C)
-      - 2019-01-21 to 2019-03-03: 21 days, mean 21.45°C (+0.62°C), max 22.25°C (+1.43°C)
-      - 2019-03-05 to 2019-03-20: 6 days, mean 21.52°C (+0.69°C), max 22.18°C (+1.36°C)
-      - 2020-01-26 to 2020-02-02: 6 days, mean 21.57°C (+0.75°C), max 22.20°C (+1.38°C)
-      - 2025-01-10 to 2025-02-11: 16 days, mean 21.93°C (+1.10°C), max 22.96°C (+2.13°C)
-      - 2025-02-25 to 2025-04-02: 13 days, mean 21.41°C (+0.58°C), max 22.01°C (+1.18°C)
+**8 heat waves detected (73 days total)** — unusually warm threshold: above 19.9°C
 
-### Eucla_1:
-  - SST: 17.70°C  |  Trend: -0.1153°C/yr (p=0.0000)
-  - Heating DD/yr: 500.3  |  Cooling DD/yr: 10.0
-  - MARINE HEAT WAVES DETECTED: 7 events (75 total days) 90th percentile threshold: 21.00°C
-      - 2018-02-07 to 2018-02-28: 8 days, mean 21.54°C (+0.55°C), max 22.14°C (+1.14°C)
-      - 2019-01-26 to 2019-03-20: 26 days, mean 21.76°C (+0.76°C), max 22.68°C (+1.68°C)
-      - 2020-01-26 to 2020-01-31: 5 days, mean 21.72°C (+0.73°C), max 22.01°C (+1.02°C)
-      - 2023-02-19 to 2023-03-04: 6 days, mean 21.53°C (+0.53°C), max 22.24°C (+1.25°C)
-      - 2023-03-15 to 2023-03-28: 6 days, mean 21.43°C (+0.44°C), max 22.10°C (+1.11°C)
-      - 2025-01-09 to 2025-02-17: 18 days, mean 21.98°C (+0.98°C), max 23.88°C (+2.88°C)
-      - 2025-02-26 to 2025-03-26: 6 days, mean 21.55°C (+0.55°C), max 22.05°C (+1.06°C)
+  - Feb 12 2018 – Feb 28 2018: **6 days** · avg 20.4°C (+0.5°C above threshold) · peak 20.7°C (+0.9°C)
+  - Mar 2 2018 – Mar 8 2018: **5 days** · avg 20.3°C (+0.4°C above threshold) · peak 20.8°C (+1.0°C)
+  - Feb 7 2019 – Feb 27 2019: **10 days** · avg 20.3°C (+0.4°C above threshold) · peak 20.5°C (+0.6°C)
+  - Mar 3 2019 – Mar 21 2019: **7 days** · avg 20.4°C (+0.5°C above threshold) · peak 20.7°C (+0.9°C)
+  - Jan 28 2020 – Feb 8 2020: **5 days** · avg 20.5°C (+0.6°C above threshold) · peak 21.3°C (+1.4°C)
+  - Mar 31 2021 – Apr 15 2021: **6 days** · avg 20.3°C (+0.5°C above threshold) · peak 20.7°C (+0.9°C)
+  - Jan 13 2025 – Feb 21 2025: **19 days** · avg 20.5°C (+0.6°C above threshold) · peak 21.1°C (+1.2°C)
+  - Feb 25 2025 – Apr 21 2025: **15 days** · avg 20.4°C (+0.6°C above threshold) · peak 20.9°C (+1.0°C)
 
-### Eucla_2:
-  - SST: 17.68°C  |  Trend: -0.1271°C/yr (p=0.0000)
-  - Heating DD/yr: 541.8  |  Cooling DD/yr: 5.9
-  - MARINE HEAT WAVES DETECTED: 5 events (74 total days) 90th percentile threshold: 20.55°C
-      - 2018-02-05 to 2018-03-01: 11 days, mean 21.23°C (+0.68°C), max 22.00°C (+1.45°C)
-      - 2019-01-27 to 2019-03-14: 25 days, mean 21.31°C (+0.76°C), max 22.30°C (+1.75°C)
-      - 2020-01-26 to 2020-02-10: 10 days, mean 21.18°C (+0.63°C), max 21.81°C (+1.26°C)
-      - 2025-01-06 to 2025-02-14: 23 days, mean 21.19°C (+0.64°C), max 22.20°C (+1.65°C)
-      - 2025-02-26 to 2025-03-23: 5 days, mean 21.02°C (+0.47°C), max 21.40°C (+0.85°C)
+### Esperance_2
 
-### Yalata:
-  - SST: 17.48°C  |  Trend: -0.1254°C/yr (p=0.0000)
-  - Heating DD/yr: 499.2  |  Cooling DD/yr: 6.1
-  - MARINE HEAT WAVES DETECTED: 10 events (92 total days) 90th percentile threshold: 20.00°C
-      - 2018-01-17 to 2018-01-28: 7 days, mean 21.57°C (+1.58°C), max 24.13°C (+4.14°C)
-      - 2018-02-05 to 2018-02-27: 11 days, mean 20.70°C (+0.71°C), max 21.44°C (+1.44°C)
-      - 2018-04-18 to 2018-04-24: 5 days, mean 20.39°C (+0.40°C), max 20.81°C (+0.82°C)
-      - 2019-02-07 to 2019-03-10: 19 days, mean 20.84°C (+0.84°C), max 21.63°C (+1.64°C)
-      - 2019-03-16 to 2019-03-21: 5 days, mean 20.37°C (+0.38°C), max 21.18°C (+1.18°C)
-      - 2019-12-28 to 2020-01-05: 7 days, mean 20.60°C (+0.61°C), max 21.09°C (+1.09°C)
-      - 2020-01-29 to 2020-02-17: 11 days, mean 20.74°C (+0.74°C), max 21.36°C (+1.37°C)
-      - 2020-02-22 to 2020-03-04: 5 days, mean 20.53°C (+0.53°C), max 21.03°C (+1.03°C)
-      - 2023-02-18 to 2023-02-25: 6 days, mean 20.72°C (+0.72°C), max 21.25°C (+1.25°C)
-      - 2025-01-16 to 2025-02-07: 16 days, mean 20.78°C (+0.79°C), max 21.70°C (+1.71°C)
+- **Average temperature:** 17.7°C (range 13.4–22.1°C)
+- **Cooling trend:** -0.065°C per year (±0.038°C) — statistically reliable
+- **Days warmer than normal per year:** 524 &nbsp; **Cooler than normal:** 1
 
-### Ceduna:
-  - SST: 17.27°C  |  Trend: -0.1080°C/yr (p=0.0000)
-  - Heating DD/yr: 468.4  |  Cooling DD/yr: 6.5
-  - MARINE HEAT WAVES DETECTED: 10 events (83 total days) 90th percentile threshold: 19.69°C
-      - 2018-01-15 to 2018-01-25: 6 days, mean 20.78°C (+1.09°C), max 21.81°C (+2.13°C)
-      - 2018-02-08 to 2018-02-17: 6 days, mean 20.26°C (+0.57°C), max 21.21°C (+1.52°C)
-      - 2018-04-18 to 2018-04-24: 5 days, mean 20.15°C (+0.47°C), max 20.33°C (+0.65°C)
-      - 2019-01-27 to 2019-02-03: 6 days, mean 20.43°C (+0.74°C), max 21.22°C (+1.53°C)
-      - 2019-02-14 to 2019-03-04: 12 days, mean 20.68°C (+1.00°C), max 21.57°C (+1.89°C)
-      - 2019-12-17 to 2019-12-24: 5 days, mean 20.51°C (+0.82°C), max 21.46°C (+1.77°C)
-      - 2019-12-27 to 2020-01-08: 9 days, mean 20.38°C (+0.69°C), max 21.44°C (+1.76°C)
-      - 2020-02-05 to 2020-02-12: 5 days, mean 20.51°C (+0.82°C), max 21.13°C (+1.45°C)
-      - 2023-02-18 to 2023-02-25: 7 days, mean 20.39°C (+0.71°C), max 21.08°C (+1.40°C)
-      - 2025-01-09 to 2025-02-12: 22 days, mean 20.35°C (+0.66°C), max 21.55°C (+1.87°C)
+**6 heat waves detected (50 days total)** — unusually warm threshold: above 20.2°C
+
+  - Feb 6 2018 – Feb 19 2018: **9 days** · avg 21.0°C (+0.8°C above threshold) · peak 21.8°C (+1.6°C)
+  - Mar 2 2018 – Mar 10 2018: **6 days** · avg 20.6°C (+0.4°C above threshold) · peak 21.1°C (+0.9°C)
+  - Mar 18 2018 – Mar 27 2018: **5 days** · avg 20.8°C (+0.6°C above threshold) · peak 21.4°C (+1.2°C)
+  - Feb 21 2019 – Mar 16 2019: **12 days** · avg 20.7°C (+0.6°C above threshold) · peak 21.5°C (+1.4°C)
+  - Jan 29 2025 – Feb 15 2025: **10 days** · avg 20.8°C (+0.6°C above threshold) · peak 21.7°C (+1.5°C)
+  - Mar 2 2025 – Mar 29 2025: **8 days** · avg 20.8°C (+0.7°C above threshold) · peak 21.3°C (+1.1°C)
+
+### Esperance_3
+
+- **Average temperature:** 17.7°C (range 13.7–22.5°C)
+- **Cooling trend:** -0.067°C per year (±0.043°C) — statistically reliable
+- **Days warmer than normal per year:** 538 &nbsp; **Cooler than normal:** 1
+
+**9 heat waves detected (73 days total)** — unusually warm threshold: above 20.6°C
+
+  - Feb 13 2018 – Feb 18 2018: **5 days** · avg 21.1°C (+0.5°C above threshold) · peak 21.5°C (+0.9°C)
+  - Mar 7 2018 – Mar 27 2018: **7 days** · avg 21.0°C (+0.5°C above threshold) · peak 21.4°C (+0.8°C)
+  - Apr 4 2018 – Apr 12 2018: **6 days** · avg 21.0°C (+0.5°C above threshold) · peak 21.3°C (+0.7°C)
+  - Feb 7 2019 – Feb 17 2019: **5 days** · avg 21.0°C (+0.5°C above threshold) · peak 21.6°C (+1.1°C)
+  - Feb 21 2019 – Mar 20 2019: **12 days** · avg 21.3°C (+0.7°C above threshold) · peak 21.8°C (+1.2°C)
+  - Apr 7 2019 – Apr 13 2019: **5 days** · avg 20.9°C (+0.3°C above threshold) · peak 21.1°C (+0.5°C)
+  - Feb 4 2020 – Feb 15 2020: **7 days** · avg 20.9°C (+0.4°C above threshold) · peak 21.4°C (+0.8°C)
+  - Jan 21 2025 – Feb 22 2025: **14 days** · avg 21.6°C (+1.1°C above threshold) · peak 22.5°C (+1.9°C)
+  - Feb 25 2025 – Apr 11 2025: **12 days** · avg 21.2°C (+0.6°C above threshold) · peak 21.7°C (+1.1°C)
+
+### Mundrabilla
+
+- **Average temperature:** 17.8°C (range 13.7–23.0°C)
+- **Cooling trend:** -0.066°C per year (±0.048°C) — statistically reliable
+- **Days warmer than normal per year:** 536 &nbsp; **Cooler than normal:** 4
+
+**6 heat waves detected (68 days total)** — unusually warm threshold: above 20.8°C
+
+  - Feb 13 2018 – Feb 28 2018: **6 days** · avg 21.2°C (+0.4°C above threshold) · peak 21.4°C (+0.6°C)
+  - Jan 21 2019 – Mar 3 2019: **21 days** · avg 21.4°C (+0.6°C above threshold) · peak 22.2°C (+1.4°C)
+  - Mar 5 2019 – Mar 20 2019: **6 days** · avg 21.5°C (+0.7°C above threshold) · peak 22.2°C (+1.4°C)
+  - Jan 26 2020 – Feb 2 2020: **6 days** · avg 21.6°C (+0.7°C above threshold) · peak 22.2°C (+1.4°C)
+  - Jan 10 2025 – Feb 11 2025: **16 days** · avg 21.9°C (+1.1°C above threshold) · peak 23.0°C (+2.1°C)
+  - Feb 25 2025 – Apr 2 2025: **13 days** · avg 21.4°C (+0.6°C above threshold) · peak 22.0°C (+1.2°C)
+
+### Eucla_1
+
+- **Average temperature:** 17.7°C (range 13.3–23.9°C)
+- **Cooling trend:** -0.115°C per year (±0.053°C) — statistically reliable
+- **Days warmer than normal per year:** 500 &nbsp; **Cooler than normal:** 10
+
+**7 heat waves detected (75 days total)** — unusually warm threshold: above 21.0°C
+
+  - Feb 7 2018 – Feb 28 2018: **8 days** · avg 21.5°C (+0.5°C above threshold) · peak 22.1°C (+1.1°C)
+  - Jan 26 2019 – Mar 20 2019: **26 days** · avg 21.8°C (+0.8°C above threshold) · peak 22.7°C (+1.7°C)
+  - Jan 26 2020 – Jan 31 2020: **5 days** · avg 21.7°C (+0.7°C above threshold) · peak 22.0°C (+1.0°C)
+  - Feb 19 2023 – Mar 4 2023: **6 days** · avg 21.5°C (+0.5°C above threshold) · peak 22.2°C (+1.2°C)
+  - Mar 15 2023 – Mar 28 2023: **6 days** · avg 21.4°C (+0.4°C above threshold) · peak 22.1°C (+1.1°C)
+  - Jan 9 2025 – Feb 17 2025: **18 days** · avg 22.0°C (+1.0°C above threshold) · peak 23.9°C (+2.9°C)
+  - Feb 26 2025 – Mar 26 2025: **6 days** · avg 21.5°C (+0.6°C above threshold) · peak 22.1°C (+1.1°C)
+
+### Eucla_2
+
+- **Average temperature:** 17.7°C (range 13.9–23.4°C)
+- **Cooling trend:** -0.127°C per year (±0.045°C) — statistically reliable
+- **Days warmer than normal per year:** 542 &nbsp; **Cooler than normal:** 6
+
+**5 heat waves detected (74 days total)** — unusually warm threshold: above 20.6°C
+
+  - Feb 5 2018 – Mar 1 2018: **11 days** · avg 21.2°C (+0.7°C above threshold) · peak 22.0°C (+1.4°C)
+  - Jan 27 2019 – Mar 14 2019: **25 days** · avg 21.3°C (+0.8°C above threshold) · peak 22.3°C (+1.7°C)
+  - Jan 26 2020 – Feb 10 2020: **10 days** · avg 21.2°C (+0.6°C above threshold) · peak 21.8°C (+1.3°C)
+  - Jan 6 2025 – Feb 14 2025: **23 days** · avg 21.2°C (+0.6°C above threshold) · peak 22.2°C (+1.6°C)
+  - Feb 26 2025 – Mar 23 2025: **5 days** · avg 21.0°C (+0.5°C above threshold) · peak 21.4°C (+0.8°C)
+
+### Yalata
+
+- **Average temperature:** 17.5°C (range 13.2–24.1°C)
+- **Cooling trend:** -0.125°C per year (±0.041°C) — statistically reliable
+- **Days warmer than normal per year:** 499 &nbsp; **Cooler than normal:** 6
+
+**10 heat waves detected (92 days total)** — unusually warm threshold: above 20.0°C
+
+  - Jan 17 2018 – Jan 28 2018: **7 days** · avg 21.6°C (+1.6°C above threshold) · peak 24.1°C (+4.1°C)
+  - Feb 5 2018 – Feb 27 2018: **11 days** · avg 20.7°C (+0.7°C above threshold) · peak 21.4°C (+1.4°C)
+  - Apr 18 2018 – Apr 24 2018: **5 days** · avg 20.4°C (+0.4°C above threshold) · peak 20.8°C (+0.8°C)
+  - Feb 7 2019 – Mar 10 2019: **19 days** · avg 20.8°C (+0.8°C above threshold) · peak 21.6°C (+1.6°C)
+  - Mar 16 2019 – Mar 21 2019: **5 days** · avg 20.4°C (+0.4°C above threshold) · peak 21.2°C (+1.2°C)
+  - Dec 28 2019 – Jan 5 2020: **7 days** · avg 20.6°C (+0.6°C above threshold) · peak 21.1°C (+1.1°C)
+  - Jan 29 2020 – Feb 17 2020: **11 days** · avg 20.7°C (+0.7°C above threshold) · peak 21.4°C (+1.4°C)
+  - Feb 22 2020 – Mar 4 2020: **5 days** · avg 20.5°C (+0.5°C above threshold) · peak 21.0°C (+1.0°C)
+  - Feb 18 2023 – Feb 25 2023: **6 days** · avg 20.7°C (+0.7°C above threshold) · peak 21.2°C (+1.3°C)
+  - Jan 16 2025 – Feb 7 2025: **16 days** · avg 20.8°C (+0.8°C above threshold) · peak 21.7°C (+1.7°C)
+
+### Ceduna
+
+- **Average temperature:** 17.3°C (range 12.8–22.0°C)
+- **Cooling trend:** -0.108°C per year (±0.038°C) — statistically reliable
+- **Days warmer than normal per year:** 468 &nbsp; **Cooler than normal:** 6
+
+**10 heat waves detected (83 days total)** — unusually warm threshold: above 19.7°C
+
+  - Jan 15 2018 – Jan 25 2018: **6 days** · avg 20.8°C (+1.1°C above threshold) · peak 21.8°C (+2.1°C)
+  - Feb 8 2018 – Feb 17 2018: **6 days** · avg 20.3°C (+0.6°C above threshold) · peak 21.2°C (+1.5°C)
+  - Apr 18 2018 – Apr 24 2018: **5 days** · avg 20.2°C (+0.5°C above threshold) · peak 20.3°C (+0.6°C)
+  - Jan 27 2019 – Feb 3 2019: **6 days** · avg 20.4°C (+0.7°C above threshold) · peak 21.2°C (+1.5°C)
+  - Feb 14 2019 – Mar 4 2019: **12 days** · avg 20.7°C (+1.0°C above threshold) · peak 21.6°C (+1.9°C)
+  - Dec 17 2019 – Dec 24 2019: **5 days** · avg 20.5°C (+0.8°C above threshold) · peak 21.5°C (+1.8°C)
+  - Dec 27 2019 – Jan 8 2020: **9 days** · avg 20.4°C (+0.7°C above threshold) · peak 21.4°C (+1.8°C)
+  - Feb 5 2020 – Feb 12 2020: **5 days** · avg 20.5°C (+0.8°C above threshold) · peak 21.1°C (+1.4°C)
+  - Feb 18 2023 – Feb 25 2023: **7 days** · avg 20.4°C (+0.7°C above threshold) · peak 21.1°C (+1.4°C)
+  - Jan 9 2025 – Feb 12 2025: **22 days** · avg 20.4°C (+0.7°C above threshold) · peak 21.6°C (+1.9°C)
 
 ---
 
-Last updated: Mon 30 Mar 2026 08:11:07 ACDT
+Last updated: Sun 17 May 2026 17:21:07 ACST
